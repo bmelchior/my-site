@@ -9,7 +9,7 @@ import { talks } from "@/lib/data/talks";
 export const metadata = createPageMetadata({
   title: "Speaking",
   description:
-    "I talk about building real products with AI — not theory, not hype.",
+    "I speak in practical, relatable terms about building with AI, and design leadership.",
   path: "/speaking",
 });
 
@@ -18,7 +18,7 @@ export default function SpeakingPage() {
     <div className="content-container py-12 md:py-16">
       <PageHeader
         title="Speaking"
-        subtitle="I talk about building real products with AI — not theory, not hype."
+        subtitle="I speak in practical, relatable terms about building with AI, and design leadership."
       />
 
       <TransitionWrapper delay={0}>
@@ -39,7 +39,7 @@ export default function SpeakingPage() {
             leadership event? I&apos;d love to hear about your audience and goals.
           </p>
           <div className="mt-6">
-            <Button href="mailto:#" variant="primary">
+            <Button href="mailto:bmelchior79@gmail.com" variant="primary">
               Get in Touch
             </Button>
           </div>

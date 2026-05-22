@@ -7,13 +7,6 @@ export type Talk = {
 
 export const talks: Talk[] = [
   {
-    id: "building-without-cofounder",
-    title: "Building AI Products Without a Technical Co-Founder",
-    description:
-      "How I went from design executive to shipping AI-powered apps in the App Store — and what I learned about the tools, tradeoffs, and mindset shifts required.",
-    audiences: ["Product Leaders", "Designers", "Founders"],
-  },
-  {
     id: "ai-for-non-engineers",
     title: "AI for Non-Engineers: A Practical Framework",
     description:
@@ -26,5 +19,12 @@ export const talks: Talk[] = [
     description:
       "Why the people who will win the AI era aren't theorists or strategists — they're the ones who ship.",
     audiences: ["Conferences", "Leadership Offsites", "Tech Teams"],
+  },
+  {
+    id: "design-leadership",
+    title: "Design Leadership",
+    description:
+      "Product Design has changed. Expectations are higher. Leadership requires a new level of empathy, honesty, and coaching.",
+    audiences: ["Design Leaders", "Managers", "Leadership Offsites"],
   },
 ];
