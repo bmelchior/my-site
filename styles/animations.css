@@ -1,0 +1,43 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 500ms ease forwards;
+  opacity: 0;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.mobile-menu-panel--open {
+  animation: slide-down 300ms ease forwards;
+}
+
+.mobile-menu-panel--closing {
+  animation: slide-up 300ms ease forwards;
+}
