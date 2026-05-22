@@ -1,10 +1,10 @@
-title: I Can't Write Code and That Matters Less Every Day
+title: I Can't Write Code, and That Matters Less Every Day
 slug: cant-write-code-matters-less
 date: March 10, 2026
 excerpt: I'm not a developer. I can read code roughly, the way you might read a menu in a language you studied in college. But I'm shipping things I never could have built two years ago.
 topic: AI
 
-# I Can't Write Code and That Matters Less Every Day
+# I Can't Write Code, and That Matters Less Every Day
 
 **March 10, 2026**
 

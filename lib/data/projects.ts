@@ -10,9 +10,15 @@ export type ProjectSections = {
   whatILearned: string | string[];
 };
 
+export type ProjectLink = {
+  label: string;
+  href: string;
+};
+
 export type ProjectImage = {
   src?: string;
   alt: string;
+  objectPosition?: "left" | "center";
 };
 
 export type Project = {
@@ -26,7 +32,9 @@ export type Project = {
   appStoreAvailable?: boolean;
   imageAlt: string;
   cardImage?: string;
+  cardImagePosition?: "top" | "bottom";
   detailPageDisabled?: boolean;
+  links: [ProjectLink, ProjectLink];
   images: ProjectImage[];
   sections: ProjectSections;
 };
@@ -48,7 +56,34 @@ export const projects: Project[] = [
     tags: ["AI", "EdTech", "In Progress"],
     featured: true,
     imageAlt: "Chat & Workflow Agents project preview",
-    images: projectImages("Chat & Workflow Agents"),
+    cardImage: "/work/chat-workflow-agents/card.png",
+    links: [
+      { label: "Link 1", href: "#" },
+      { label: "Link 2", href: "#" },
+    ],
+    images: [
+      {
+        src: "/work/chat-workflow-agents/1.png",
+        alt: "Custom GPT agents directory at AXS",
+      },
+      {
+        src: "/work/chat-workflow-agents/2.png",
+        alt: "UXD Career Coach custom GPT interface",
+      },
+      {
+        src: "/work/chat-workflow-agents/3.png",
+        alt: "FX UX Copywriter custom GPT interface",
+      },
+      {
+        src: "/work/chat-workflow-agents/ai-survey.png",
+        alt: "AI usage survey results charts",
+      },
+      {
+        src: "/work/chat-workflow-agents/product-feedback-agent.png",
+        alt: "Product Feedback Synthesizer Agent interface",
+        objectPosition: "left",
+      },
+    ],
     sections: {
       problem: "Placeholder — will write later.",
       solution: "Placeholder — will write later.",
@@ -72,6 +107,10 @@ export const projects: Project[] = [
     appStoreAvailable: true,
     imageAlt: "Teller Family project preview",
     cardImage: "/work/teller-family/card.png",
+    links: [
+      { label: "Link 1", href: "#" },
+      { label: "Link 2", href: "#" },
+    ],
     images: [
       {
         src: "/work/teller-family/1.png",
@@ -141,15 +180,20 @@ export const projects: Project[] = [
     featured: true,
     appStoreAvailable: true,
     imageAlt: "The Usher project preview",
-    cardImage: "/work/the-usher/card.png",
+    cardImage: "/work/the-usher/card-v2.png",
+    cardImagePosition: "bottom",
+    links: [
+      { label: "Link 1", href: "#" },
+      { label: "Link 2", href: "#" },
+    ],
     images: [
       {
         src: "/work/the-usher/1.png",
-        alt: "The Usher home screen with recent searches and Ask the Usher",
+        alt: "The Usher home screen with movie grid and Ask the Usher",
       },
       {
         src: "/work/the-usher/2.png",
-        alt: "Movie search with Ask the Usher chat in The Usher",
+        alt: "The Usher home screen with recent searches and Ask the Usher",
       },
       {
         src: "/work/the-usher/3.png",
@@ -199,6 +243,10 @@ export const projects: Project[] = [
     appStoreAvailable: true,
     imageAlt: "Teller Stories project preview",
     cardImage: "/work/teller-stories/card.png",
+    links: [
+      { label: "Link 1", href: "#" },
+      { label: "Link 2", href: "#" },
+    ],
     images: [
       {
         src: "/work/teller-stories/1.png",
@@ -269,6 +317,10 @@ export const projects: Project[] = [
     featured: true,
     detailPageDisabled: true,
     imageAlt: "Dyslexia EdTech Suite project preview",
+    links: [
+      { label: "Link 1", href: "#" },
+      { label: "Link 2", href: "#" },
+    ],
     images: projectImages("Dyslexia EdTech Suite"),
     sections: {
       problem:
@@ -294,6 +346,10 @@ export const projects: Project[] = [
     personal: true,
     imageAlt: "Daily Vinyl Recommender project preview",
     cardImage: "/work/ai-design-tooling/card.png",
+    links: [
+      { label: "Link 1", href: "#" },
+      { label: "Link 2", href: "#" },
+    ],
     images: [
       {
         src: "/work/ai-design-tooling/1.png",
@@ -348,6 +404,10 @@ export const projects: Project[] = [
     personal: true,
     imageAlt: "AI Tools Dashboard project preview",
     cardImage: "/work/recipe-scraper/card.png",
+    links: [
+      { label: "Link 1", href: "#" },
+      { label: "Link 2", href: "#" },
+    ],
     images: projectImages("AI Tools Dashboard"),
     sections: {
       problem:

@@ -22,6 +22,7 @@ export default function WorkProjectCard({
             alt={project.imageAlt}
             src={project.cardImage}
             aspectRatio="4/3"
+            objectPosition={project.cardImagePosition}
             className="rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
             showAppStoreBadge={project.appStoreAvailable}
             workInProgress={project.tags.includes("In Progress")}

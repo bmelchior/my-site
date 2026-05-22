@@ -9,6 +9,7 @@ type ProjectCardImageProps = {
   className?: string;
   showAppStoreBadge?: boolean;
   workInProgress?: boolean;
+  objectPosition?: "top" | "bottom";
 };
 
 export default function ProjectCardImage({
@@ -18,6 +19,7 @@ export default function ProjectCardImage({
   className = "",
   showAppStoreBadge = false,
   workInProgress = false,
+  objectPosition = "top",
 }: ProjectCardImageProps) {
   const aspectClass =
     aspectRatio === "square" ? "aspect-square" : "aspect-[4/3]";
@@ -33,7 +35,9 @@ export default function ProjectCardImage({
             alt={alt}
             fill
             sizes="(max-width: 768px) 100vw, 320px"
-            className="object-cover object-top"
+            className={`object-cover ${
+              objectPosition === "bottom" ? "object-bottom" : "object-top"
+            }`}
           />
         </div>
       ) : (

@@ -17,7 +17,7 @@ const bioParagraphs = [
   "I've spent 20 years leading design at companies like BuzzFeed, The New York Times, DirecTV, Ticketmaster, and Capital One. At three of those companies, I built design systems from the ground up where none existed — advocating for the investment, earning stakeholder buy-in, and designing and building in tight collaboration with engineering from day one. Across every role, I've raised the value and visibility of design and user research in organizations where design was historically undervalued — earning it a seat at the strategy table, not just a spot in the production line.",
   "As a designer, AI has been empowering. For the first time, I can envision and ship an idea.",
   "What drives me now is shipping over theorizing. I'd rather have a working product in someone's hands than a strategy deck in a boardroom. AI didn't change my values — it gave me new tools to live them.",
-  "I'm based in Scottsdale, Arizona. When I'm not building, you'll find me with my dog, listening to vinyl, or behind a camera.",
+  "I'm based in Scottsdale, Arizona. When I'm not building, you'll find me watching a movie at home with my dog and husband, listening to vinyl, or traveling the world with my camera and my husband.",
 ];
 
 export default function AboutPage() {

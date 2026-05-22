@@ -53,6 +53,7 @@ export default function HomePage() {
                     alt={project.imageAlt}
                     src={project.cardImage}
                     aspectRatio="4/3"
+                    objectPosition={project.cardImagePosition}
                     showAppStoreBadge={project.appStoreAvailable}
                     workInProgress={project.tags.includes("In Progress")}
                   />

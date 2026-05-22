@@ -81,7 +81,11 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                   alt={image.alt}
                   fill
                   sizes="(max-width: 768px) 270px, (max-width: 1024px) 300px, 350px"
-                  className="object-cover object-top"
+                  className={`object-cover ${
+                    image.objectPosition === "left"
+                      ? "object-left-top"
+                      : "object-top"
+                  }`}
                 />
               ) : (
                 <div role="img" aria-label={image.alt} className="h-full w-full" />

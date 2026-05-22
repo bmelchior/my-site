@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import TagPill from "@/components/TagPill";
 import TransitionWrapper from "@/components/TransitionWrapper";
 import ProjectCarousel from "@/components/work/ProjectCarousel";
+import ProjectDetailLinks from "@/components/work/ProjectDetailLinks";
 import { createPageMetadata } from "@/lib/metadata";
 import {
   getAdjacentProjects,
@@ -70,6 +71,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               {project.title}
             </h1>
             <p className="mt-4 text-lg text-secondary">{project.description}</p>
+            <ProjectDetailLinks links={project.links} />
 
             <div className="mt-12 space-y-12">
               {sections.hypothesis && (
