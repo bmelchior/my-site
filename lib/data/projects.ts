@@ -107,6 +107,7 @@ export const projects: Project[] = [
     appStoreAvailable: true,
     imageAlt: "Teller Family project preview",
     cardImage: "/work/teller-family/card.png",
+    cardImagePosition: "bottom",
     links: [
       { label: "Link 1", href: "#" },
       { label: "Link 2", href: "#" },

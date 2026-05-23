@@ -1,3 +1,4 @@
+import DoneBlocks from "@/components/home/DoneBlocks";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
@@ -14,6 +15,37 @@ export const metadata = createPageMetadata({
   path: "/",
 });
 
+const doneBlocks = [
+  {
+    image: "/images/done/tm.png",
+    imageAlt: "Ticketmaster",
+    leadIn: "+42pt NPS lift at Ticketmaster —",
+    story:
+      "Led the design transformation that turned a 20-person team into a strategic function.",
+  },
+  {
+    image: "/images/done/sling.png",
+    imageAlt: "Sling",
+    leadIn: "3.5x conversion on sling.com —",
+    story:
+      "Designed and launched a global navigation that multiplied signups.",
+  },
+  {
+    image: "/images/done/tri.png",
+    imageAlt: "Design systems",
+    leadIn: "3 design systems built from zero —",
+    story:
+      "Advocated, got buy-in, and shipped design systems at companies that had none.",
+  },
+  {
+    image: "/images/done/cap.png",
+    imageAlt: "Capital One",
+    leadIn: "4.5% increase in funded loans at Capital One —",
+    story:
+      "Led a 10-week redesign that lifted every metric in the conversion funnel.",
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -28,9 +60,10 @@ export default function HomePage() {
             I build with it.
           </h1>
           <p className="mx-auto max-w-[600px] text-lg text-secondary">
-            Two decades of design leadership taught me how to think about
-            products. AI gave me the tools to build them myself. Now I ship
-            AI-powered apps and help others close that same gap.
+          Twenty years of design leadership taught me how to think about products. AI gave me the power to build them. 
+          </p>
+          <p className="mx-auto max-w-[600px] text-lg text-secondary">
+          Now I ship my own ideas and help others turn AI from something overwhelming to empowering.
           </p>
           <div>
             <Button href="/work" variant="primary">
@@ -40,7 +73,7 @@ export default function HomePage() {
         </TransitionWrapper>
       </section>
 
-      <section className="content-container py-16 md:py-24">
+      <section className="content-container pt-16 md:pt-24 pb-12 md:pb-16">
         <TransitionWrapper delay={100}>
           <h2 className="mb-8 text-2xl font-semibold text-primary md:text-3xl">
             What I&apos;ve Built
@@ -88,6 +121,15 @@ export default function HomePage() {
 
       <section className="content-container pb-16 md:pb-24">
         <TransitionWrapper delay={200}>
+          <h2 className="mb-8 text-2xl font-semibold text-primary md:text-3xl">
+            What I&apos;ve Done
+          </h2>
+          <DoneBlocks blocks={doneBlocks} />
+        </TransitionWrapper>
+      </section>
+
+      <section className="content-container pb-16 md:pb-24">
+        <TransitionWrapper delay={300}>
           <h2 className="text-2xl font-semibold text-primary md:text-3xl">
             Personal Projects
           </h2>

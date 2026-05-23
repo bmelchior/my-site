@@ -17,6 +17,9 @@
   --color-dark-border: #2d2d2d;
   --header-height: 64px;
   --page-margin: 16px;
+  --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+  --pullquote-font-size: 21px;
+  --pullquote-indent: 1.5rem;
 }
 
 @theme inline {
@@ -34,6 +37,7 @@
   --color-dark-secondary: var(--color-dark-secondary);
   --color-dark-border: var(--color-dark-border);
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: ui-serif, Georgia, "Times New Roman", serif;
   --radius-card: 8px;
   --radius-button: 4px;
 }
@@ -84,4 +88,20 @@ body {
 
 .article-content strong {
   font-weight: 600;
+}
+
+.pullquote {
+  font-family: var(--font-serif);
+  font-size: var(--pullquote-font-size);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--color-text-primary);
+  padding-inline: var(--pullquote-indent);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --pullquote-indent: 2rem;
+  }
 }
