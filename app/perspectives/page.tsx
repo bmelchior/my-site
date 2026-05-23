@@ -26,6 +26,10 @@ export default function PerspectivesPage() {
       <PageHeader
         title="Perspectives"
         subtitle="Thoughts on building with AI, design leadership, and shipping products."
+        link={{
+          label: "Find me on LinkedIn",
+          href: "https://www.linkedin.com/in/bmelchior/",
+        }}
       />
 
       <TransitionWrapper delay={0}>

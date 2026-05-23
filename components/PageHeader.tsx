@@ -3,13 +3,22 @@ import Image from "next/image";
 type PageHeaderProps = {
   title: string;
   subtitle?: string;
+  link?: {
+    label: string;
+    href: string;
+  };
   image?: {
     src: string;
     alt: string;
   };
 };
 
-export default function PageHeader({ title, subtitle, image }: PageHeaderProps) {
+export default function PageHeader({
+  title,
+  subtitle,
+  link,
+  image,
+}: PageHeaderProps) {
   return (
     <header className={`mb-12 ${image ? "flex items-start gap-6" : ""}`}>
       {image && (
@@ -30,6 +39,18 @@ export default function PageHeader({ title, subtitle, image }: PageHeaderProps) 
         </h1>
         {subtitle && (
           <p className="mt-4 text-lg text-secondary">{subtitle}</p>
+        )}
+        {link && (
+          <p className="mt-4 text-[10px] font-bold uppercase">
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#1668AA]"
+            >
+              {link.label}
+            </a>
+          </p>
         )}
       </div>
     </header>

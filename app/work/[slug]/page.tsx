@@ -71,7 +71,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               {project.title}
             </h1>
             <p className="mt-4 text-lg text-secondary">{project.description}</p>
-            <ProjectDetailLinks links={project.links} />
+            {project.links && <ProjectDetailLinks links={project.links} />}
 
             <div className="mt-12 space-y-12">
               {sections.hypothesis && (
@@ -98,61 +98,67 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   Timeline
                 </h2>
                 <div className="space-y-4">
-                  <p className="text-base leading-relaxed text-primary">
-                    Placeholder
-                  </p>
+                  {renderBody(sections.timeline ?? "Placeholder")}
                 </div>
               </section>
 
-              <section>
-                <h2 className="mb-4 text-xl font-semibold text-primary">
-                  The Problem
-                </h2>
-                <div className="space-y-4">{renderBody(sections.problem)}</div>
-              </section>
-
-              <section>
-                <h2 className="mb-4 text-xl font-semibold text-primary">
-                  The Solution
-                </h2>
-                <div className="space-y-4">{renderBody(sections.solution)}</div>
-              </section>
-
-              <section>
-                <h2 className="mb-4 text-xl font-semibold text-primary">
-                  How AI Is Used
-                </h2>
-                <div className="space-y-4">
-                  {renderBody(sections.howAiIsUsed)}
-                </div>
-              </section>
-
-              <section>
-                <h2 className="mb-4 text-xl font-semibold text-primary">
-                  Tech Stack
-                </h2>
-                <div className="space-y-4">
-                  <p className="text-base leading-relaxed text-primary">
-                    {sections.techStack.intro}
-                  </p>
-                  {sections.techStack.items.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                      {sections.techStack.items.map((item) => (
-                        <TagPill key={item} label={item} size="md" />
-                      ))}
+              {!project.hideContentSections && (
+                <>
+                  <section>
+                    <h2 className="mb-4 text-xl font-semibold text-primary">
+                      The Problem
+                    </h2>
+                    <div className="space-y-4">
+                      {renderBody(sections.problem)}
                     </div>
-                  )}
-                </div>
-              </section>
+                  </section>
 
-              <section>
-                <h2 className="mb-4 text-xl font-semibold text-primary">
-                  What I Learned
-                </h2>
-                <div className="space-y-4">
-                  {renderBody(sections.whatILearned)}
-                </div>
-              </section>
+                  <section>
+                    <h2 className="mb-4 text-xl font-semibold text-primary">
+                      The Solution
+                    </h2>
+                    <div className="space-y-4">
+                      {renderBody(sections.solution)}
+                    </div>
+                  </section>
+
+                  <section>
+                    <h2 className="mb-4 text-xl font-semibold text-primary">
+                      How AI Is Used
+                    </h2>
+                    <div className="space-y-4">
+                      {renderBody(sections.howAiIsUsed)}
+                    </div>
+                  </section>
+
+                  <section>
+                    <h2 className="mb-4 text-xl font-semibold text-primary">
+                      Tech Stack
+                    </h2>
+                    <div className="space-y-4">
+                      <p className="text-base leading-relaxed text-primary">
+                        {sections.techStack.intro}
+                      </p>
+                      {sections.techStack.items.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                          {sections.techStack.items.map((item) => (
+                            <TagPill key={item} label={item} size="md" />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </section>
+
+                  <section>
+                    <h2 className="mb-4 text-xl font-semibold text-primary">
+                      What I Learned
+                    </h2>
+                    <div className="space-y-4">
+                      {renderBody(sections.whatILearned)}
+                    </div>
+                  </section>
+                </>
+              )}
             </div>
           </TransitionWrapper>
 

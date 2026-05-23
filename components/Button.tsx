@@ -16,7 +16,7 @@ const variants = {
   primary:
     "bg-accent text-surface hover:bg-accent-hover",
   secondary:
-    "border border-border bg-transparent text-primary hover:bg-highlight",
+    "border border-primary bg-transparent text-primary hover:bg-primary/10",
 };
 
 export default function Button({

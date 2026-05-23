@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Footer() {
   return (
     <footer className="border-t border-dark-border bg-dark-bg py-8">
@@ -11,24 +9,28 @@ export default function Footer() {
           className="flex flex-wrap gap-6 text-sm"
           aria-label="Social links"
         >
-          <Link
-            href="#"
+          <a
+            href="https://www.linkedin.com/in/bmelchior/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-dark-secondary transition-colors duration-200 ease-in-out hover:text-dark-primary"
           >
             LinkedIn
-          </Link>
-          <Link
-            href="#"
+          </a>
+          <a
+            href="https://www.instagram.com/bmelchior"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-dark-secondary transition-colors duration-200 ease-in-out hover:text-dark-primary"
           >
-            GitHub
-          </Link>
-          <Link
-            href="#"
+            Instagram
+          </a>
+          <a
+            href="mailto:bmelchior79@gmail.com"
             className="text-dark-secondary transition-colors duration-200 ease-in-out hover:text-dark-primary"
           >
             Email
-          </Link>
+          </a>
         </nav>
       </div>
     </footer>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import SectionDivider from "@/components/SectionDivider";
 import TransitionWrapper from "@/components/TransitionWrapper";
@@ -38,24 +37,28 @@ export default function ContactPage() {
           className="flex flex-wrap justify-center gap-6 text-sm"
           aria-label="Contact links"
         >
-          <Link
-            href="#"
+          <a
+            href="mailto:bmelchior79@gmail.com"
             className="text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
           >
             Email
-          </Link>
-          <Link
-            href="#"
+          </a>
+          <a
+            href="https://www.linkedin.com/in/bmelchior/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
           >
             LinkedIn
-          </Link>
-          <Link
-            href="#"
+          </a>
+          <a
+            href="https://www.instagram.com/bmelchior"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
           >
-            GitHub
-          </Link>
+            Instagram
+          </a>
         </nav>
       </div>
     </div>

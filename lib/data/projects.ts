@@ -1,6 +1,7 @@
 export type ProjectSections = {
   problem: string | string[];
   hypothesis?: string | string[];
+  timeline?: string | string[];
   solution: string | string[];
   howAiIsUsed: string | string[];
   techStack: {
@@ -34,7 +35,8 @@ export type Project = {
   cardImage?: string;
   cardImagePosition?: "top" | "bottom";
   detailPageDisabled?: boolean;
-  links: [ProjectLink, ProjectLink];
+  hideContentSections?: boolean;
+  links?: [ProjectLink, ProjectLink];
   images: ProjectImage[];
   sections: ProjectSections;
 };
@@ -53,14 +55,10 @@ export const projects: Project[] = [
       "Custom agents that save my team hours while improving quality of work.",
     cardDescription:
       "Custom agents that save my team hours while improving quality of work.",
-    tags: ["AI", "EdTech", "In Progress"],
+    tags: ["AI", "Custom GPTs", "Workflow Automation"],
     featured: true,
     imageAlt: "Chat & Workflow Agents project preview",
     cardImage: "/work/chat-workflow-agents/card.png",
-    links: [
-      { label: "Link 1", href: "#" },
-      { label: "Link 2", href: "#" },
-    ],
     images: [
       {
         src: "/work/chat-workflow-agents/1.png",
@@ -85,15 +83,20 @@ export const projects: Project[] = [
       },
     ],
     sections: {
-      problem: "Placeholder — will write later.",
-      solution: "Placeholder — will write later.",
-      howAiIsUsed: "Placeholder — will write later.",
+      timeline: "Can be built in minutes.",
+      problem:
+        "Design teams do a lot of repetitive, high-effort work that looks different every time but follows the same patterns underneath. Writing UX copy across dozens of screens. Synthesizing product feedback from multiple sources. Coaching junior designers through career questions they've asked before. Each task is important, but the time adds up fast, and the quality varies depending on who does it and how much bandwidth they have that day.",
+      solution:
+        "Instead of a single \"use ChatGPT for stuff\" directive, I gave the team purpose-built tools that fit into the work we already do. I built a library of custom chat agents (GPT's) tailored to my team's real workflows. Each one is trained on our standards, our voice, and our context. A UX Copywriter agent that consistently writes in our product's tone. A Product Feedback Synthesizer that turns raw feedback into structured insights. A Career Coach that gives designers personalized guidance based on our leveling framework. With the right context, each agent works the way we do.",
+      howAiIsUsed:
+        "Each agent is custom-built with detailed system instructions, reference documents, and scoped responsibilities. They're not general-purpose chatbots. The UX Copywriter knows our voice guidelines and component patterns. The Career Coach knows our design leveling criteria. The Feedback Synthesizer knows how to categorize and prioritize input from specific channels. I ran bi-weekly AI usage surveys across the team to understand adoption patterns, how they were used, and how much time was saved.",
       techStack: {
         intro:
-          "To be determined — planned stack will be added as development begins.",
+          "Custom GPTs and Workspace Agents (OpenAI). Other leading LLM's offer similar tools.",
         items: [],
       },
-      whatILearned: "Placeholder — will write later.",
+      whatILearned:
+        "The biggest unlock wasn't the agents themselves. It was showing a non-technical team that AI could be shaped to fit their specific work, not the other way around. Adoption jumped when people stopped thinking of AI as a generic tool and started seeing it as something built for them. And the most effective agents weren't the most sophisticated ones. Inspired by these agents, other teams in the company have built their own custom agents.",
     },
   },
   {
@@ -109,8 +112,8 @@ export const projects: Project[] = [
     cardImage: "/work/teller-family/card.png",
     cardImagePosition: "bottom",
     links: [
-      { label: "Link 1", href: "#" },
-      { label: "Link 2", href: "#" },
+      { label: "Website", href: "https://tellerfamily.app/" },
+      { label: "App Store", href: "https://apps.apple.com/app/id6763470676" },
     ],
     images: [
       {
@@ -147,8 +150,9 @@ export const projects: Project[] = [
       },
     ],
     sections: {
+      timeline: "3 weeks",
       problem:
-        "Parents want to create personalized stories for their kids but don't have the time or illustration skills to make them special. Generic children's books can't include the child's own world — their pets, their house, their family.",
+        "Parents want fresh stories to read to their kids. Kids love seeing pictures and illustrations of the world they know and live in — their pets, their house, their family. Most AI story apps generate bland, generic stories.",
       hypothesis:
         "Personalized content is the next evolution in media. Media has gone from edited and linear, to recorded and saved, to recommended and shared. Personalization algorithms will give way to personalized content — content that features the viewer and their world. I'm not sure how much space it will take up, and professionally-created content will always dominate, just as linear still has its place today, but personalized content will continue to grow.",
       solution: [
@@ -169,7 +173,10 @@ export const projects: Project[] = [
           "Vercel",
         ],
       },
-      whatILearned: "Placeholder — will write later.",
+      whatILearned: [
+        "Getting people to adopt a new app or tool is hard! My problem statement and hypothesis were based on real conversations and anecdotes. But that doesn't guarantee usage! Seeing this firsthand from the ground up has been enlightening.",
+        "Aside from the perils of consumer app launches, I learned how AI sees and processes images, and how it can take the safest path to accomplish its goal. Both of these can sometimes cause the AI to not re-generate the image as an illustration. This project gave me a much deeper understanding of how AI works.",
+      ],
     },
   },
   {
@@ -210,12 +217,13 @@ export const projects: Project[] = [
       },
     ],
     sections: {
+      timeline: "2-3 weeks",
       problem:
-        "Picking a movie shouldn't take longer than watching one. Streaming platforms optimize for engagement, not for helping you find something you'll actually enjoy. You end up scrolling for 30 minutes and settling.",
+        "When my husband and I sit down for movie night, sometimes the streaming app doesn't show the Rotten Tomatoes score. So my husband will ask me to look it up. Google and IMDB give you everything you'd want to know about the movie, and often the score is a couple clicks away. Other times, we'll think of a movie but we don't know where to find it.",
       solution:
-        "The Usher is a movie discovery app with an AI-powered conversational expert. Tell it what you're in the mood for, and it recommends films based on taste, mood, and streaming availability — no algorithm, no endless browsing.",
+        "I built The Usher to help me find what I want quickly — the RT score and where to stream it. And for when I want any other information, I implemented a chat interface with a movie expert to answer any question I have.",
       howAiIsUsed:
-        'The "Ask the Usher" feature uses Claude as a conversational movie expert that considers your preferences, mood, and viewing history to make tailored recommendations. It pulls real-time data from TMDB and OMDB for ratings and streaming availability.',
+        'The "Ask the Usher" feature uses Claude as a conversational movie expert that is constrained to answering questions about the movie page you\'re on. And I added another chat widget to the home screen to answer questions about any movie and make recommendations.',
       techStack: {
         intro:
           "A web and mobile stack connected to movie databases and Claude for conversational recommendations.",
@@ -229,7 +237,8 @@ export const projects: Project[] = [
           "Vercel",
         ],
       },
-      whatILearned: "Placeholder — will write later.",
+      whatILearned:
+        "This is a very simple app. But a key decision I made was to constrain the AI to the movie page you're on, which means it answers questions based on the data it's trained on. This means it doesn't stray from being a movie expert (and doesn't search the web when it doesn't know something). But its data is always 1-2 years old. So The Usher doesn't know much about new movies.",
     },
   },
   {
@@ -245,8 +254,8 @@ export const projects: Project[] = [
     imageAlt: "Teller Stories project preview",
     cardImage: "/work/teller-stories/card.png",
     links: [
-      { label: "Link 1", href: "#" },
-      { label: "Link 2", href: "#" },
+      { label: "Website", href: "https://teller-app.com/" },
+      { label: "App Store", href: "https://apps.apple.com/app/teller-stories/id6760958168" },
     ],
     images: [
       {
@@ -283,14 +292,15 @@ export const projects: Project[] = [
       },
     ],
     sections: {
+      timeline: "6 weeks",
       problem:
-        "Your photos sit in a camera roll, sorted by date, forgotten by next week. The moments they capture matter, but nobody has time to turn them into something more. Scrapbooks are a project. Journals fall off after a week. The photos just pile up.",
+        "After we travel, I always make a photo book. And although the photos bring back memories, I started thinking about how AI could recontextualize my memories in a fun way.",
       hypothesis:
         "Personalized content is the next evolution in media. Media has gone from edited and linear, to recorded and saved, to recommended and shared. Personalization algorithms will give way to personalized content — content that features the viewer and their world. I'm not sure how much space it will take up, and professionally-created content will always dominate, just as linear still has its place today, but personalized content will continue to grow.",
       solution:
         "Teller Stories turns your photos into short stories you'll actually want to read, keep, and share. Upload one to eight photos, name your characters, add an optional note for context, and pick a genre. The app generates a complete, personalized story with your original photos woven throughout the narrative. A morning walk becomes a children's story. A vacation becomes a sci-fi adventure. A date night becomes a romantic comedy. The photos stay yours. The story is something new.",
       howAiIsUsed:
-        "Claude analyzes the uploaded photos to understand the people, setting, and mood in each image, then writes a complete short story calibrated to the chosen genre. The narrative is structured so that each photo appears at the right moment in the story, making the images feel like they were always part of the telling. No illustrations are generated. Your real photos are the visuals.",
+        "My focus here was on quality, so the AI is told to mimic famous authors from each genre (again, with AI, context is the key to quality). Claude analyzes the uploaded photos to understand the people, setting, and mood in each image, then writes a complete short story calibrated to the chosen genre. The narrative is structured so that each photo appears at the right moment in the story, making the images feel like they were always part of the telling.",
       techStack: {
         intro:
           "Next.js, Expo, React Native, Supabase, Claude API, RevenueCat, Vercel.",
@@ -304,26 +314,27 @@ export const projects: Project[] = [
           "Vercel",
         ],
       },
-      whatILearned: "Placeholder — will write later.",
+      whatILearned: [
+        "\"AI slop\" can be avoided by carefully choosing clear references. And, while at first people were surprised by the quality and found joy in the experience, even sharing them with friends and family, it proved to be a novelty experience.",
+        "Still, this was my first end-to-end app with account creation and a monetization strategy. So that experience was invaluable.",
+      ],
     },
   },
   {
     slug: "dyslexia-edtech",
     title: "Dyslexia EdTech Suite",
     description:
-      "AI tools that help parents and educators support struggling readers.",
+      "Tools that help parents and educators support struggling readers.",
     cardDescription:
-      "AI tools that help parents and educators support struggling readers — coming soon",
+      "Tools that help parents and educators support struggling readers — coming soon",
     tags: ["AI", "EdTech", "In Progress"],
     featured: true,
     detailPageDisabled: true,
+    hideContentSections: true,
     imageAlt: "Dyslexia EdTech Suite project preview",
-    links: [
-      { label: "Link 1", href: "#" },
-      { label: "Link 2", href: "#" },
-    ],
     images: projectImages("Dyslexia EdTech Suite"),
     sections: {
+      timeline: "I'm currently working on this project.",
       problem:
         "Parents who suspect their child has dyslexia face a fragmented, expensive, and slow system. Screening waitlists are long, resources are scattered, and most digital tools are built for clinicians, not families.",
       solution:
@@ -347,10 +358,6 @@ export const projects: Project[] = [
     personal: true,
     imageAlt: "Daily Vinyl Recommender project preview",
     cardImage: "/work/ai-design-tooling/card.png",
-    links: [
-      { label: "Link 1", href: "#" },
-      { label: "Link 2", href: "#" },
-    ],
     images: [
       {
         src: "/work/ai-design-tooling/1.png",
@@ -382,6 +389,7 @@ export const projects: Project[] = [
       },
     ],
     sections: {
+      timeline: "Hours, with iterative improvements",
       problem:
         "I listen to a couple of vinyl records every morning with my coffee. But half awake and barely functional, I kept reaching for whatever was in front of me or the same albums I always play. 500 records and I was rotating through maybe 20. I'd been practicing a habit of asking 'how can AI help me?' on anything I did, so I pointed that question at my morning routine.",
       solution:
@@ -393,35 +401,46 @@ export const projects: Project[] = [
           "Built entirely in Google Apps Script with Claude handling the intelligence layer and Google Sheets as the database. No frameworks, no hosting, no app to maintain. It just runs every morning.",
         items: ["Apps Script", "Claude API", "Google Sheets"],
       },
-      whatILearned: "Placeholder — will write later.",
+      whatILearned:
+        "\"Agents\" are the sexy AI term of the year, but understanding the difference between LLM's, Automations, and Agents can help you find a simpler solution that does a better job.",
     },
   },
   {
-    slug: "recipe-scraper",
+    slug: "ai-tools-dashboard",
     title: "AI Tools Dashboard",
     description:
       "A web app that pulls AI tools mentioned in my newsletters and builds a filterable dashboard.",
     tags: ["AI", "Side Project", "Next.js"],
     personal: true,
     imageAlt: "AI Tools Dashboard project preview",
-    cardImage: "/work/recipe-scraper/card.png",
-    links: [
-      { label: "Link 1", href: "#" },
-      { label: "Link 2", href: "#" },
+    cardImage: "/work/ai-tools-dashboard/card.png",
+    images: [
+      {
+        src: "/work/ai-tools-dashboard/1.png",
+        alt: "AI Tool DB dashboard showing all tools with category filters",
+      },
+      {
+        src: "/work/ai-tools-dashboard/2.png",
+        alt: "AI Tool DB filtered to daily tools in the Creative category",
+      },
+      {
+        src: "/work/ai-tools-dashboard/3.png",
+        alt: "AI Tool DB filtered to notable tools in Creative and Productivity",
+      },
     ],
-    images: projectImages("AI Tools Dashboard"),
     sections: {
+      timeline: "An hour",
       problem:
-        "Placeholder — Recipe blogs bury the actual instructions under life stories and ads. Saving a clean version means manual copy-paste.",
+        "As I started learning about AI, I subscribed to daily newsletters. One of these newsletters has a list promoted tools. Occasionally they sounded interesting and sparked ideas, but I'd forget about them as quickly as I discovered them.",
       solution:
-        "Placeholder — Paste a URL and get a structured recipe with ingredients and steps, stripped of everything else.",
+        "I built a simple dashboard that reads my emails tagged \"AI\" and pulls the tools listed. Then Claude tags them. The UI dedupes the list of tools and lets me filter by tags. I then added the ability to favorite tools I want to come back to later.",
       howAiIsUsed:
-        "Placeholder — Claude parses page HTML and extracts a normalized recipe format.",
+        "Claude helped me figure out what to build, which tool to use (this led me to using Cursor for the first time), and troubleshoot bugs. In the app, Claude tags and summarizes the tools.",
       techStack: {
-        intro: "Placeholder — A lightweight web app built to test extraction quality.",
+        intro: "React Web App, built with Cursor.",
         items: ["Next.js", "Claude API", "Vercel"],
       },
-      whatILearned: "Placeholder — will write later.",
+      whatILearned: "Although the app is simple, it taught me I was capable of building a functioning app within an extraordinarily short amount of time.",
     },
   },
 ];
