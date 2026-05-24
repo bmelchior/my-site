@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useMobileMenu } from "@/components/MobileMenuContext";
 
 const navLinks = [
   { href: "/work", label: "Work" },
@@ -12,8 +13,7 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [menuMounted, setMenuMounted] = useState(false);
+  const { menuOpen, setMenuOpen, menuMounted, setMenuMounted } = useMobileMenu();
 
   const openMenu = () => {
     setMenuMounted(true);

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Card from "@/components/Card";
 import ProjectCardImage from "@/components/ProjectCardImage";
+import ProjectCardTitle from "@/components/ProjectCardTitle";
 import TagPill from "@/components/TagPill";
 import TransitionWrapper from "@/components/TransitionWrapper";
 import type { Project } from "@/lib/data/projects";
@@ -29,9 +30,9 @@ export default function WorkProjectCard({
           />
         </div>
         <div className="flex flex-col justify-center p-6">
-          <h2 className="text-xl font-semibold text-primary">
+          <ProjectCardTitle as="h2" className="text-xl">
             {project.title}
-          </h2>
+          </ProjectCardTitle>
           <p className="mt-3 text-base leading-relaxed text-secondary">
             {project.description}
           </p>

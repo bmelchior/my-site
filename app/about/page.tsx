@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import SectionDivider from "@/components/SectionDivider";
 import TransitionWrapper from "@/components/TransitionWrapper";
 import CareerTimeline from "@/components/about/CareerTimeline";
+import HowIWork from "@/components/about/HowIWork";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -75,6 +76,17 @@ export default function AboutPage() {
       <SectionDivider />
 
       <TransitionWrapper delay={100}>
+        <section className="mb-16">
+          <h2 className="mb-4 text-2xl font-semibold text-primary">
+            Leadership Style
+          </h2>
+          <p className="mb-8 text-sm font-bold text-secondary">
+            Transparent • Pragmatic • Integrative • Coaching-Oriented •
+            Opinionated
+          </p>
+          <HowIWork />
+        </section>
+
         <section>
           <h2 className="mb-8 text-2xl font-semibold text-primary">
             Career Highlights

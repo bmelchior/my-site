@@ -1,8 +1,9 @@
 import DoneBlocks from "@/components/home/DoneBlocks";
+import HomeSectionNav from "@/components/home/HomeSectionNav";
 import Link from "next/link";
-import Button from "@/components/Button";
 import Card from "@/components/Card";
 import ProjectCardImage from "@/components/ProjectCardImage";
+import ProjectCardTitle from "@/components/ProjectCardTitle";
 import TransitionWrapper from "@/components/TransitionWrapper";
 import WorkProjectCard from "@/components/work/WorkProjectCard";
 import { createPageMetadata } from "@/lib/metadata";
@@ -16,6 +17,13 @@ export const metadata = createPageMetadata({
 });
 
 const doneBlocks = [
+  {
+    image: "/images/done/axs.png",
+    imageAlt: "AXS",
+    leadIn: "AI-driven leader at AXS —",
+    story:
+      "Turning AI from a curiosity into a measurable capability across my team and organization.",
+  },
   {
     image: "/images/done/tm.png",
     imageAlt: "Ticketmaster",
@@ -65,19 +73,24 @@ export default function HomePage() {
           <p className="mx-auto max-w-[600px] text-lg text-secondary">
           Now I ship my own ideas and help others turn AI from something overwhelming to empowering.
           </p>
-          <div>
-            <Button href="/work" variant="primary">
-              See What I&apos;ve Built
-            </Button>
-          </div>
         </TransitionWrapper>
       </section>
 
-      <section className="content-container pt-16 md:pt-24 pb-12 md:pb-16">
+      <HomeSectionNav />
+
+      <section
+        id="what-ive-built"
+        className="home-section content-container pt-16 md:pt-24 pb-12 md:pb-16"
+      >
         <TransitionWrapper delay={100}>
-          <h2 className="mb-8 text-2xl font-semibold text-primary md:text-3xl">
+          <h2 className="text-2xl font-semibold text-primary md:text-3xl">
             What I&apos;ve Built
           </h2>
+          <p className="mt-4 mb-8 max-w-[600px] text-lg text-secondary">
+            Great products don&apos;t start with ideas. They start with a
+            clear-eyed read of a problem or an opportunity. Below are some
+            real-world examples and experiments.
+          </p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project) => {
               const card = (
@@ -91,9 +104,9 @@ export default function HomePage() {
                     workInProgress={project.tags.includes("In Progress")}
                   />
                   <div className="p-6">
-                    <h3 className="text-lg font-semibold text-primary">
+                    <ProjectCardTitle className="text-lg">
                       {project.title}
-                    </h3>
+                    </ProjectCardTitle>
                     <p className="mt-2 text-sm text-secondary">
                       {project.cardDescription ?? project.description}
                     </p>
@@ -119,7 +132,10 @@ export default function HomePage() {
         </TransitionWrapper>
       </section>
 
-      <section className="content-container pb-16 md:pb-24">
+      <section
+        id="what-ive-done"
+        className="home-section content-container pb-16 md:pb-24"
+      >
         <TransitionWrapper delay={200}>
           <h2 className="mb-8 text-2xl font-semibold text-primary md:text-3xl">
             What I&apos;ve Done
@@ -128,7 +144,10 @@ export default function HomePage() {
         </TransitionWrapper>
       </section>
 
-      <section className="content-container pb-16 md:pb-24">
+      <section
+        id="personal-projects"
+        className="home-section content-container pb-16 md:pb-24"
+      >
         <TransitionWrapper delay={300}>
           <h2 className="text-2xl font-semibold text-primary md:text-3xl">
             Personal Projects

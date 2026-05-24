@@ -52,10 +52,10 @@ export const projects: Project[] = [
     slug: "chat-workflow-agents",
     title: "Chat & Workflow Agents",
     description:
-      "Custom agents that save my team hours while improving quality of work.",
+      "Leveraging OpenAI's GPT's and Workspace Agents, I save my team hours while improving quality of work.",
     cardDescription:
-      "Custom agents that save my team hours while improving quality of work.",
-    tags: ["AI", "Custom GPTs", "Workflow Automation"],
+      "Leveraging OpenAI's GPT's and Workspace Agents, I save my team hours while improving quality of work.",
+    tags: ["AI", "Custom GPTs", "Workflow Automation", "ChatGPT"],
     featured: true,
     imageAlt: "Chat & Workflow Agents project preview",
     cardImage: "/work/chat-workflow-agents/card.png",
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     description: "Turn family photos into illustrated bedtime stories with AI.",
     cardDescription:
       "Turn family photos into personalized illustrated bedtime stories with AI.",
-    tags: ["AI", "Mobile", "Expo", "Supabase", "Claude", "fal.ai"],
+    tags: ["AI", "Mobile", "Expo", "Supabase", "Claude", "fal.ai", "Cursor"],
     featured: true,
     appStoreAvailable: true,
     imageAlt: "Teller Family project preview",
@@ -182,9 +182,11 @@ export const projects: Project[] = [
   {
     slug: "the-usher",
     title: "The Usher",
-    description: "Your AI movie expert — skip the scrolling, find what to watch.",
-    cardDescription: "Your AI movie expert — skip the scrolling, find what to watch.",
-    tags: ["AI", "Next.js", "Mobile", "TMDB", "Claude"],
+    description:
+      "Your AI movie expert — find what to watch and where, without all the clutter.",
+    cardDescription:
+      "Your AI movie expert — find what to watch and where, without all the clutter.",
+    tags: ["AI", "Next.js", "Mobile", "TMDB", "Claude", "Cursor"],
     featured: true,
     appStoreAvailable: true,
     imageAlt: "The Usher project preview",
@@ -248,7 +250,7 @@ export const projects: Project[] = [
       "AI-powered storytelling that turns your photos into personalized stories.",
     cardDescription:
       "AI-powered storytelling that turns your photos into personalized stories.",
-    tags: ["AI", "Mobile", "Next.js", "Expo", "Supabase", "Claude"],
+    tags: ["AI", "Mobile", "Next.js", "Expo", "Supabase", "Claude", "Cursor"],
     featured: true,
     appStoreAvailable: true,
     imageAlt: "Teller Stories project preview",
@@ -354,7 +356,7 @@ export const projects: Project[] = [
     title: "Daily Vinyl Recommender",
     description:
       "An Apps Script that recommends 3 vinyl records every morning based on the vibe of the day.",
-    tags: ["AI", "Apps Script", "Automation"],
+    tags: ["AI", "Apps Script", "Automation", "Claude", "Google Sheets"],
     personal: true,
     imageAlt: "Daily Vinyl Recommender project preview",
     cardImage: "/work/ai-design-tooling/card.png",
@@ -410,7 +412,7 @@ export const projects: Project[] = [
     title: "AI Tools Dashboard",
     description:
       "A web app that pulls AI tools mentioned in my newsletters and builds a filterable dashboard.",
-    tags: ["AI", "Side Project", "Next.js"],
+    tags: ["AI", "Side Project", "Next.js", "Cursor", "Claude"],
     personal: true,
     imageAlt: "AI Tools Dashboard project preview",
     cardImage: "/work/ai-tools-dashboard/card.png",
