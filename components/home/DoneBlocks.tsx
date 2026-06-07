@@ -55,7 +55,7 @@ export default function DoneBlocks({ blocks }: DoneBlocksProps) {
       {blocks.map((block) => (
         <div
           key={block.leadIn}
-          className="flex min-h-[125px] gap-4 rounded-lg bg-hero-bg"
+          className="flex min-h-[125px] gap-4 overflow-hidden rounded-lg bg-hero-bg"
         >
           <Image
             src={block.image}

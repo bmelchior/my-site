@@ -9,11 +9,13 @@ import type { Project } from "@/lib/data/projects";
 type WorkProjectCardProps = {
   project: Project;
   index: number;
+  aspectRatio?: "4/3" | "16/9" | "square";
 };
 
 export default function WorkProjectCard({
   project,
   index,
+  aspectRatio = "16/9",
 }: WorkProjectCardProps) {
   const card = (
     <Card className="overflow-hidden">
@@ -22,7 +24,7 @@ export default function WorkProjectCard({
           <ProjectCardImage
             alt={project.imageAlt}
             src={project.cardImage}
-            aspectRatio="4/3"
+            aspectRatio={aspectRatio}
             objectPosition={project.cardImagePosition}
             className="rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
             showAppStoreBadge={project.appStoreAvailable}

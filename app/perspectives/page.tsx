@@ -34,7 +34,7 @@ export default function PerspectivesPage() {
 
       <TransitionWrapper delay={0}>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-[65%_35%] lg:grid-cols-[70%_30%] lg:gap-12">
-          <div className="order-2 md:order-1">
+          <div className="order-2 flex flex-col gap-6 md:order-1">
             {articles.map((article) => (
               <ArticleCard key={article.slug} article={article} />
             ))}

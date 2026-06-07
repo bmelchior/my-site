@@ -5,7 +5,7 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 type ProjectCardImageProps = {
   alt: string;
   src?: string;
-  aspectRatio?: "4/3" | "square";
+  aspectRatio?: "4/3" | "16/9" | "square";
   className?: string;
   showAppStoreBadge?: boolean;
   workInProgress?: boolean;
@@ -22,13 +22,17 @@ export default function ProjectCardImage({
   objectPosition = "top",
 }: ProjectCardImageProps) {
   const aspectClass =
-    aspectRatio === "square" ? "aspect-square" : "aspect-[4/3]";
+    aspectRatio === "square"
+      ? "aspect-square"
+      : aspectRatio === "16/9"
+        ? "aspect-video"
+        : "aspect-[4/3]";
 
   return (
     <div className="relative">
       {src ? (
         <div
-          className={`relative w-full overflow-hidden bg-highlight ${aspectClass} ${className}`}
+          className={`relative w-full overflow-hidden border border-border bg-highlight ${aspectClass} ${className}`}
         >
           <Image
             src={src}
@@ -44,7 +48,7 @@ export default function ProjectCardImage({
         <PlaceholderImage
           alt={alt}
           aspectRatio={aspectRatio}
-          className={className}
+          className={`border border-border ${className}`}
           workInProgress={workInProgress}
         />
       )}

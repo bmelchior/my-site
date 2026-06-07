@@ -49,57 +49,6 @@ function projectImages(title: string): ProjectImage[] {
 
 export const projects: Project[] = [
   {
-    slug: "chat-workflow-agents",
-    title: "Chat & Workflow Agents",
-    description:
-      "Leveraging OpenAI's GPT's and Workspace Agents, I save my team hours while improving quality of work.",
-    cardDescription:
-      "Leveraging OpenAI's GPT's and Workspace Agents, I save my team hours while improving quality of work.",
-    tags: ["AI", "Custom GPTs", "Workflow Automation", "ChatGPT"],
-    featured: true,
-    imageAlt: "Chat & Workflow Agents project preview",
-    cardImage: "/work/chat-workflow-agents/card.png",
-    images: [
-      {
-        src: "/work/chat-workflow-agents/1.png",
-        alt: "Custom GPT agents directory at AXS",
-      },
-      {
-        src: "/work/chat-workflow-agents/2.png",
-        alt: "UXD Career Coach custom GPT interface",
-      },
-      {
-        src: "/work/chat-workflow-agents/3.png",
-        alt: "FX UX Copywriter custom GPT interface",
-      },
-      {
-        src: "/work/chat-workflow-agents/ai-survey.png",
-        alt: "AI usage survey results charts",
-      },
-      {
-        src: "/work/chat-workflow-agents/product-feedback-agent.png",
-        alt: "Product Feedback Synthesizer Agent interface",
-        objectPosition: "left",
-      },
-    ],
-    sections: {
-      timeline: "Can be built in minutes.",
-      problem:
-        "Design teams do a lot of repetitive, high-effort work that looks different every time but follows the same patterns underneath. Writing UX copy across dozens of screens. Synthesizing product feedback from multiple sources. Coaching junior designers through career questions they've asked before. Each task is important, but the time adds up fast, and the quality varies depending on who does it and how much bandwidth they have that day.",
-      solution:
-        "Instead of a single \"use ChatGPT for stuff\" directive, I gave the team purpose-built tools that fit into the work we already do. I built a library of custom chat agents (GPT's) tailored to my team's real workflows. Each one is trained on our standards, our voice, and our context. A UX Copywriter agent that consistently writes in our product's tone. A Product Feedback Synthesizer that turns raw feedback into structured insights. A Career Coach that gives designers personalized guidance based on our leveling framework. With the right context, each agent works the way we do.",
-      howAiIsUsed:
-        "Each agent is custom-built with detailed system instructions, reference documents, and scoped responsibilities. They're not general-purpose chatbots. The UX Copywriter knows our voice guidelines and component patterns. The Career Coach knows our design leveling criteria. The Feedback Synthesizer knows how to categorize and prioritize input from specific channels. I ran bi-weekly AI usage surveys across the team to understand adoption patterns, how they were used, and how much time was saved.",
-      techStack: {
-        intro:
-          "Custom GPTs and Workspace Agents (OpenAI). Other leading LLM's offer similar tools.",
-        items: [],
-      },
-      whatILearned:
-        "The biggest unlock wasn't the agents themselves. It was showing a non-technical team that AI could be shaped to fit their specific work, not the other way around. Adoption jumped when people stopped thinking of AI as a generic tool and started seeing it as something built for them. And the most effective agents weren't the most sophisticated ones. Inspired by these agents, other teams in the company have built their own custom agents.",
-    },
-  },
-  {
     slug: "teller-family",
     title: "Teller Family",
     description: "Turn family photos into illustrated bedtime stories with AI.",
@@ -109,7 +58,7 @@ export const projects: Project[] = [
     featured: true,
     appStoreAvailable: true,
     imageAlt: "Teller Family project preview",
-    cardImage: "/work/teller-family/card.png",
+    cardImage: "/work/teller-family/hero-card.jpg",
     cardImagePosition: "bottom",
     links: [
       { label: "Website", href: "https://tellerfamily.app/" },
@@ -190,7 +139,7 @@ export const projects: Project[] = [
     featured: true,
     appStoreAvailable: true,
     imageAlt: "The Usher project preview",
-    cardImage: "/work/the-usher/card-v2.png",
+    cardImage: "/work/the-usher/hero-card.jpg",
     cardImagePosition: "bottom",
     links: [
       { label: "Link 1", href: "#" },
@@ -254,7 +203,7 @@ export const projects: Project[] = [
     featured: true,
     appStoreAvailable: true,
     imageAlt: "Teller Stories project preview",
-    cardImage: "/work/teller-stories/card.png",
+    cardImage: "/work/teller-stories/hero-card.jpg",
     links: [
       { label: "Website", href: "https://teller-app.com/" },
       { label: "App Store", href: "https://apps.apple.com/app/teller-stories/id6760958168" },
@@ -352,6 +301,57 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "chat-workflow-agents",
+    title: "Chat & Workflow Agents",
+    description:
+      "Leveraging OpenAI's GPT's and Workspace Agents, I save my team hours while improving quality of work.",
+    cardDescription:
+      "Leveraging OpenAI's GPT's and Workspace Agents, I save my team hours while improving quality of work.",
+    tags: ["AI", "Custom GPTs", "Workflow Automation", "ChatGPT"],
+    featured: true,
+    imageAlt: "Chat & Workflow Agents project preview",
+    cardImage: "/work/chat-workflow-agents/hero-card.jpg",
+    images: [
+      {
+        src: "/work/chat-workflow-agents/1.png",
+        alt: "Custom GPT agents directory at AXS",
+      },
+      {
+        src: "/work/chat-workflow-agents/2.png",
+        alt: "UXD Career Coach custom GPT interface",
+      },
+      {
+        src: "/work/chat-workflow-agents/3.png",
+        alt: "FX UX Copywriter custom GPT interface",
+      },
+      {
+        src: "/work/chat-workflow-agents/ai-survey.png",
+        alt: "AI usage survey results charts",
+      },
+      {
+        src: "/work/chat-workflow-agents/product-feedback-agent.png",
+        alt: "Product Feedback Synthesizer Agent interface",
+        objectPosition: "left",
+      },
+    ],
+    sections: {
+      timeline: "Can be built in minutes.",
+      problem:
+        "Design teams do a lot of repetitive, high-effort work that looks different every time but follows the same patterns underneath. Writing UX copy across dozens of screens. Synthesizing product feedback from multiple sources. Coaching junior designers through career questions they've asked before. Each task is important, but the time adds up fast, and the quality varies depending on who does it and how much bandwidth they have that day.",
+      solution:
+        "Instead of a single \"use ChatGPT for stuff\" directive, I gave the team purpose-built tools that fit into the work we already do. I built a library of custom chat agents (GPT's) tailored to my team's real workflows. Each one is trained on our standards, our voice, and our context. A UX Copywriter agent that consistently writes in our product's tone. A Product Feedback Synthesizer that turns raw feedback into structured insights. A Career Coach that gives designers personalized guidance based on our leveling framework. With the right context, each agent works the way we do.",
+      howAiIsUsed:
+        "Each agent is custom-built with detailed system instructions, reference documents, and scoped responsibilities. They're not general-purpose chatbots. The UX Copywriter knows our voice guidelines and component patterns. The Career Coach knows our design leveling criteria. The Feedback Synthesizer knows how to categorize and prioritize input from specific channels. I ran bi-weekly AI usage surveys across the team to understand adoption patterns, how they were used, and how much time was saved.",
+      techStack: {
+        intro:
+          "Custom GPTs and Workspace Agents (OpenAI). Other leading LLM's offer similar tools.",
+        items: [],
+      },
+      whatILearned:
+        "The biggest unlock wasn't the agents themselves. It was showing a non-technical team that AI could be shaped to fit their specific work, not the other way around. Adoption jumped when people stopped thinking of AI as a generic tool and started seeing it as something built for them. And the most effective agents weren't the most sophisticated ones. Inspired by these agents, other teams in the company have built their own custom agents.",
+    },
+  },
+  {
     slug: "ai-design-tooling",
     title: "Daily Vinyl Recommender",
     description:
@@ -359,7 +359,7 @@ export const projects: Project[] = [
     tags: ["AI", "Apps Script", "Automation", "Claude", "Google Sheets"],
     personal: true,
     imageAlt: "Daily Vinyl Recommender project preview",
-    cardImage: "/work/ai-design-tooling/card.png",
+    cardImage: "/work/ai-design-tooling/hero-card.jpg",
     images: [
       {
         src: "/work/ai-design-tooling/1.png",
@@ -415,7 +415,7 @@ export const projects: Project[] = [
     tags: ["AI", "Side Project", "Next.js", "Cursor", "Claude"],
     personal: true,
     imageAlt: "AI Tools Dashboard project preview",
-    cardImage: "/work/ai-tools-dashboard/card.png",
+    cardImage: "/work/ai-tools-dashboard/hero-card.jpg",
     images: [
       {
         src: "/work/ai-tools-dashboard/1.png",

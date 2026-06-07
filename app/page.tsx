@@ -57,12 +57,12 @@ const doneBlocks = [
 export default function HomePage() {
   return (
     <>
-      <section className="flex min-h-[300px] flex-col items-center justify-center bg-hero-bg p-12 text-center">
+      <section className="mx-4 my-2 flex min-h-[300px] flex-col items-center justify-center rounded-[48px] border border-[var(--color-hero-border)] bg-hero-bg p-12 text-center md:mx-8 md:my-4">
         <TransitionWrapper
           delay={0}
           className="flex max-w-3xl flex-col items-center gap-8"
         >
-          <h1 className="text-4xl font-semibold text-primary md:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-semibold leading-snug text-primary md:text-5xl lg:text-6xl">
             I don&apos;t just talk about AI.
             <br />
             I build with it.
@@ -98,7 +98,7 @@ export default function HomePage() {
                   <ProjectCardImage
                     alt={project.imageAlt}
                     src={project.cardImage}
-                    aspectRatio="4/3"
+                    aspectRatio="16/9"
                     objectPosition={project.cardImagePosition}
                     showAppStoreBadge={project.appStoreAvailable}
                     workInProgress={project.tags.includes("In Progress")}
@@ -162,6 +162,7 @@ export default function HomePage() {
                 key={project.slug}
                 project={project}
                 index={index}
+                aspectRatio="16/9"
               />
             ))}
           </div>

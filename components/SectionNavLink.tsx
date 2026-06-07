@@ -7,7 +7,7 @@ type SectionNavLinkProps = {
 };
 
 export function sectionNavLinkClassName(active = false) {
-  return `text-[13px] font-bold uppercase transition-colors duration-200 ease-in-out ${
+  return `cursor-pointer text-[13px] font-bold uppercase transition-colors duration-200 ease-in-out hover:text-primary ${
     active ? "text-primary" : "text-rust"
   }`;
 }

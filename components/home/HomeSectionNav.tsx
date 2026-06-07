@@ -49,7 +49,7 @@ export default function HomeSectionNav() {
 
   return (
     <div
-      className={`sticky top-16 z-30 w-full bg-hero-bg max-md:transition-opacity max-md:duration-200 ${
+      className={`sticky top-16 z-30 w-full bg-bg max-md:transition-opacity max-md:duration-200 ${
         menuMounted ? "max-md:pointer-events-none max-md:opacity-0" : ""
       }`}
     >
