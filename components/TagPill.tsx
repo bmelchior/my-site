@@ -1,19 +1,15 @@
 type TagPillProps = {
   label: string;
-  size?: "sm" | "md";
+  variant?: "tech" | "status" | "default";
 };
 
-export default function TagPill({ label, size = "sm" }: TagPillProps) {
-  const sizeClasses =
-    size === "md"
-      ? "px-3.5 py-1.5 text-sm"
-      : "px-3 py-1 text-xs";
+export default function TagPill({
+  label,
+  variant = "tech",
+}: TagPillProps) {
+  if (variant === "tech" || variant === "default") {
+    return <span className="chip-tech">{label}</span>;
+  }
 
-  return (
-    <span
-      className={`inline-block rounded bg-highlight text-secondary ${sizeClasses}`}
-    >
-      {label}
-    </span>
-  );
+  return <span className="chip-status">{label}</span>;
 }

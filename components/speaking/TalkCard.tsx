@@ -9,13 +9,11 @@ type TalkCardProps = {
 
 export default function TalkCard({ talk }: TalkCardProps) {
   return (
-    <Card className="p-8">
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+    <Card variant="product" className="p-8 md:p-10">
+      <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0 flex-1">
-          <h2 className="text-xl font-semibold text-primary">{talk.title}</h2>
-          <p className="mt-4 text-base leading-relaxed text-secondary">
-            {talk.description}
-          </p>
+          <h2 className="text-card-title text-primary">{talk.title}</h2>
+          <p className="mt-4 text-body text-secondary">{talk.description}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {talk.audiences.map((audience) => (
               <TagPill key={audience} label={audience} />

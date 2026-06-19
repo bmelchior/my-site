@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TextLink from "@/components/TextLink";
 
 type PageHeaderProps = {
   title: string;
@@ -20,9 +21,9 @@ export default function PageHeader({
   image,
 }: PageHeaderProps) {
   return (
-    <header className={`mb-12 ${image ? "flex items-start gap-6" : ""}`}>
+    <header className={`mb-14 ${image ? "flex items-start gap-8" : ""}`}>
       {image && (
-        <div className="relative h-[150px] w-[150px] shrink-0 overflow-hidden rounded-lg">
+        <div className="relative h-[150px] w-[150px] shrink-0 overflow-hidden rounded-[var(--radius-md)] border border-border">
           <Image
             src={image.src}
             alt={image.alt}
@@ -34,22 +35,15 @@ export default function PageHeader({
         </div>
       )}
       <div>
-        <h1 className="text-3xl font-semibold text-primary md:text-4xl lg:text-5xl">
-          {title}
-        </h1>
+        <h1 className="text-page-h1 text-primary">{title}</h1>
         {subtitle && (
-          <p className="mt-4 text-lg text-secondary">{subtitle}</p>
+          <p className="mt-5 text-body-lg text-secondary">{subtitle}</p>
         )}
         {link && (
-          <p className="mt-4 text-[10px] font-bold uppercase">
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#1668AA]"
-            >
+          <p className="mt-5">
+            <TextLink href={link.href} external className="text-meta text-accent-2">
               {link.label}
-            </a>
+            </TextLink>
           </p>
         )}
       </div>

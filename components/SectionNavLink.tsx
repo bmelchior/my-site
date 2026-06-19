@@ -7,8 +7,8 @@ type SectionNavLinkProps = {
 };
 
 export function sectionNavLinkClassName(active = false) {
-  return `cursor-pointer text-[13px] font-bold uppercase transition-colors duration-200 ease-in-out hover:text-primary ${
-    active ? "text-primary" : "text-rust"
+  return `chip-role cursor-pointer transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-primary hover:border-border-strong ${
+    active ? "chip-role--active" : ""
   }`;
 }
 
@@ -18,7 +18,11 @@ export default function SectionNavLink({
   onClick,
 }: SectionNavLinkProps) {
   return (
-    <button type="button" onClick={onClick} className={sectionNavLinkClassName(active)}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={sectionNavLinkClassName(active)}
+    >
       {children}
     </button>
   );

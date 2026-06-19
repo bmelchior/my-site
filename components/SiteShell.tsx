@@ -11,14 +11,16 @@ type SiteShellProps = {
 export default function SiteShell({ children }: SiteShellProps) {
   return (
     <MobileMenuProvider>
-      <Header />
-      <main
-        className="min-h-screen"
-        style={{ paddingTop: "var(--header-height)" }}
-      >
-        {children}
-      </main>
-      <Footer />
+      <div className="bg-atmosphere min-h-screen">
+        <Header />
+        <main
+          className="min-h-screen"
+          style={{ paddingTop: "var(--header-height)" }}
+        >
+          {children}
+        </main>
+        <Footer />
+      </div>
     </MobileMenuProvider>
   );
 }

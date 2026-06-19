@@ -49,28 +49,22 @@ export default function HomeSectionNav() {
 
   return (
     <div
-      className={`sticky top-16 z-30 w-full bg-bg max-md:transition-opacity max-md:duration-200 ${
+      className={`sticky top-16 z-30 w-full border-b border-[rgba(244,241,232,0.08)] bg-[rgba(13,16,22,0.72)] backdrop-blur-[16px] max-md:transition-opacity max-md:duration-200 ${
         menuMounted ? "max-md:pointer-events-none max-md:opacity-0" : ""
       }`}
     >
       <nav
-        className="content-container flex flex-wrap items-center justify-center gap-x-3 py-3"
+        className="content-container flex flex-wrap items-center justify-center gap-3 py-3"
         aria-label="Homepage sections"
       >
-        {sections.map((section, index) => (
-          <span key={section.id} className="flex items-center gap-3">
-            {index > 0 && (
-              <span className="text-[13px] font-bold text-primary" aria-hidden="true">
-                •
-              </span>
-            )}
-            <SectionNavLink
-              active={activeSection === section.id}
-              onClick={() => handleClick(section.id)}
-            >
-              {section.label}
-            </SectionNavLink>
-          </span>
+        {sections.map((section) => (
+          <SectionNavLink
+            key={section.id}
+            active={activeSection === section.id}
+            onClick={() => handleClick(section.id)}
+          >
+            {section.label}
+          </SectionNavLink>
         ))}
       </nav>
     </div>

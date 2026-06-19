@@ -1,3 +1,14 @@
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -8,7 +19,12 @@
 }
 
 .animate-fade-in {
-  animation: fade-in 500ms ease forwards;
+  animation: fade-in-up 220ms var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-simple {
+  animation: fade-in 220ms var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
   opacity: 0;
 }
 
@@ -35,9 +51,25 @@
 }
 
 .mobile-menu-panel--open {
-  animation: slide-down 300ms ease forwards;
+  animation: slide-down 220ms var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
 }
 
 .mobile-menu-panel--closing {
-  animation: slide-up 300ms ease forwards;
+  animation: slide-up 220ms var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fade-in-simple {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .mobile-menu-panel--open,
+  .mobile-menu-panel--closing {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

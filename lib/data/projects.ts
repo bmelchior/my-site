@@ -34,6 +34,7 @@ export type Project = {
   imageAlt: string;
   cardImage?: string;
   cardImagePosition?: "top" | "bottom";
+  cardImageFit?: "cover" | "contain";
   detailPageDisabled?: boolean;
   hideContentSections?: boolean;
   links?: [ProjectLink, ProjectLink];
@@ -273,17 +274,19 @@ export const projects: Project[] = [
   },
   {
     slug: "dyslexia-edtech",
-    title: "Dyslexia EdTech Suite",
+    title: "Stridable",
     description:
-      "Tools that help parents and educators support struggling readers.",
+      "Resources and tools to help parents of kids that are dyslexic navigate federal laws, state laws, and find resources for their kids.",
     cardDescription:
-      "Tools that help parents and educators support struggling readers — coming soon",
+      "Resources and tools to help parents of kids that are dyslexic navigate federal laws, state laws, and find resources for their kids.",
     tags: ["AI", "EdTech", "In Progress"],
     featured: true,
     detailPageDisabled: true,
     hideContentSections: true,
-    imageAlt: "Dyslexia EdTech Suite project preview",
-    images: projectImages("Dyslexia EdTech Suite"),
+    imageAlt: "Stridable logo",
+    cardImage: "/work/dyslexia-edtech/hero-card.png",
+    cardImageFit: "contain",
+    images: projectImages("Stridable"),
     sections: {
       timeline: "I'm currently working on this project.",
       problem:
@@ -447,7 +450,20 @@ export const projects: Project[] = [
   },
 ];
 
-export const featuredProjects = projects.filter((p) => p.featured);
+const featuredPriority: Partial<Record<string, number>> = {
+  "dyslexia-edtech": 0,
+  "chat-workflow-agents": 1,
+};
+
+export const featuredProjects = projects
+  .filter((p) => p.featured)
+  .sort((a, b) => {
+    const aPriority =
+      featuredPriority[a.slug] ?? 100 + projects.indexOf(a);
+    const bPriority =
+      featuredPriority[b.slug] ?? 100 + projects.indexOf(b);
+    return aPriority - bPriority;
+  });
 export const personalProjects = projects.filter((p) => p.personal);
 
 export function getProjectBySlug(slug: string): Project | undefined {

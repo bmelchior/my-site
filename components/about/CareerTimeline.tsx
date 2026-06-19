@@ -28,15 +28,18 @@ const timelineEntries = [
 
 export default function CareerTimeline() {
   return (
-    <ol className="relative border-l-2 border-border pl-8">
+    <ol className="relative border-l border-border pl-8">
       {timelineEntries.map((entry) => (
-        <li key={entry.year} className="relative mb-8 last:mb-0">
+        <li key={entry.year} className="relative mb-10 last:mb-0">
           <span
-            className="absolute -left-[calc(1rem+5px)] top-1.5 h-2 w-2 rounded-full bg-accent"
+            className="absolute -left-[calc(1rem+4px)] top-2 h-2 w-2 rounded-full bg-accent ring-4 ring-bg"
             aria-hidden="true"
           />
-          <h3 className="text-sm font-bold text-secondary">{entry.year}</h3>
-          <p className="mt-1 text-base text-primary">{entry.description}</p>
+          <p className="text-meta text-accent">{entry.year.split(":")[0]}</p>
+          <h3 className="mt-1 text-card-title text-primary">
+            {entry.year.includes(":") ? entry.year.split(":").slice(1).join(":").trim() : entry.year}
+          </h3>
+          <p className="mt-2 text-body text-secondary">{entry.description}</p>
         </li>
       ))}
     </ol>

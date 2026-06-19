@@ -7,16 +7,7 @@ type ButtonProps = {
   href?: string;
   type?: "button" | "submit";
   className?: string;
-};
-
-const baseStyles =
-  "inline-block rounded p-4 text-base font-medium transition-all duration-200 ease-in-out";
-
-const variants = {
-  primary:
-    "bg-accent text-surface hover:bg-accent-hover",
-  secondary:
-    "border border-primary bg-transparent text-primary hover:bg-primary/10",
+  disabled?: boolean;
 };
 
 export default function Button({
@@ -25,8 +16,11 @@ export default function Button({
   href,
   type = "button",
   className = "",
+  disabled = false,
 }: ButtonProps) {
-  const styles = `${baseStyles} ${variants[variant]} ${className}`;
+  const styles = `${
+    variant === "primary" ? "btn-primary" : "btn-secondary"
+  } ${disabled ? "pointer-events-none opacity-50" : ""} ${className}`;
 
   if (href) {
     return (
@@ -37,7 +31,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} className={styles}>
+    <button type={type} className={styles} disabled={disabled}>
       {children}
     </button>
   );

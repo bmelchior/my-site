@@ -12,6 +12,8 @@ export default function ProjectCardTitle({
   className = "",
 }: ProjectCardTitleProps) {
   return (
-    <Tag className={`font-semibold text-rust ${className}`}>{children}</Tag>
+    <Tag className={`text-card-title text-primary ${className}`}>
+      {children}
+    </Tag>
   );
 }

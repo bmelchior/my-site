@@ -17,20 +17,23 @@ const workEntries = [
 
 export default function HowIWork() {
   return (
-    <ol className="space-y-8">
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
       {workEntries.map((entry) => (
-        <li key={entry.title}>
-          <h3 className="text-sm font-bold text-secondary">{entry.title}</h3>
+        <article
+          key={entry.title}
+          className="rounded-[var(--radius-md)] border border-border bg-surface-2 p-6"
+        >
+          <h3 className="text-card-title text-primary">{entry.title}</h3>
           {entry.paragraphs.map((paragraph) => (
             <p
               key={paragraph.slice(0, 40)}
-              className="mt-1 text-base text-primary"
+              className="mt-3 text-body text-secondary"
             >
               {paragraph}
             </p>
           ))}
-        </li>
+        </article>
       ))}
-    </ol>
+    </div>
   );
 }

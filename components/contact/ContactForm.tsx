@@ -10,36 +10,26 @@ export default function ContactForm() {
       aria-label="Contact form"
     >
       <div>
-        <label htmlFor="name" className="mb-2 block text-sm font-medium text-primary">
+        <label htmlFor="name" className="mb-2 block text-meta text-muted">
           Name
         </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          className="w-full rounded border border-border bg-surface px-4 py-3 text-primary transition-all duration-200 ease-in-out focus:border-accent focus:shadow-[0_0_0_3px_rgba(45,45,45,0.1)] focus:outline-none"
-        />
+        <input id="name" name="name" type="text" className="field-input" />
       </div>
       <div>
-        <label htmlFor="email" className="mb-2 block text-sm font-medium text-primary">
+        <label htmlFor="email" className="mb-2 block text-meta text-muted">
           Email
         </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          className="w-full rounded border border-border bg-surface px-4 py-3 text-primary transition-all duration-200 ease-in-out focus:border-accent focus:shadow-[0_0_0_3px_rgba(45,45,45,0.1)] focus:outline-none"
-        />
+        <input id="email" name="email" type="email" className="field-input" />
       </div>
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-primary">
+        <label htmlFor="message" className="mb-2 block text-meta text-muted">
           Message
         </label>
         <textarea
           id="message"
           name="message"
           rows={5}
-          className="w-full resize-y rounded border border-border bg-surface px-4 py-3 text-primary transition-all duration-200 ease-in-out focus:border-accent focus:shadow-[0_0_0_3px_rgba(45,45,45,0.1)] focus:outline-none"
+          className="field-input min-h-[140px] resize-y"
         />
       </div>
       <Button type="submit" variant="primary">

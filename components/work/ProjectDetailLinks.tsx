@@ -8,16 +8,15 @@ type ProjectDetailLinksProps = {
 export default function ProjectDetailLinks({ links }: ProjectDetailLinksProps) {
   const [first, second] = links;
 
-  const linkClassName = "text-[#1668AA]";
-
   function renderLink({ label, href }: ProjectLink) {
     const isExternal = href.startsWith("http");
+    const className = "link-editorial text-meta text-accent-2";
 
     if (isExternal) {
       return (
         <a
           href={href}
-          className={linkClassName}
+          className={className}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -27,16 +26,18 @@ export default function ProjectDetailLinks({ links }: ProjectDetailLinksProps) {
     }
 
     return (
-      <Link href={href} className={linkClassName}>
+      <Link href={href} className={className}>
         {label}
       </Link>
     );
   }
 
   return (
-    <p className="mt-4 text-[10px] font-bold uppercase">
+    <p className="mt-4 flex flex-wrap items-center gap-2">
       {renderLink(first)}
-      <span className="text-primary"> • </span>
+      <span className="text-subtle" aria-hidden="true">
+        •
+      </span>
       {renderLink(second)}
     </p>
   );

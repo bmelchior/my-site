@@ -68,7 +68,7 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
           {images.map((image, index) => (
             <div
               key={`${image.alt}-${index}`}
-              className="relative aspect-[3/4] shrink-0 overflow-hidden bg-highlight"
+              className="relative aspect-[3/4] shrink-0 overflow-hidden rounded-[var(--radius-md)] border border-border bg-surface-2"
               style={{
                 width: slideWidth > 0 ? slideWidth : undefined,
                 opacity: index === currentIndex ? 1 : 0.6,
@@ -99,7 +99,7 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
             type="button"
             onClick={goPrev}
             aria-label="Previous image"
-            className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-bg/90 text-primary shadow-sm transition-colors duration-200 ease-in-out hover:bg-surface"
+            className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface/90 text-primary shadow-[var(--shadow-card)] transition-colors duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-border-strong hover:bg-surface-2"
           >
             <svg
               width="20"
@@ -124,7 +124,7 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
             type="button"
             onClick={goNext}
             aria-label="Next image"
-            className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-bg/90 text-primary shadow-sm transition-colors duration-200 ease-in-out hover:bg-surface"
+            className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface/90 text-primary shadow-[var(--shadow-card)] transition-colors duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-border-strong hover:bg-surface-2"
           >
             <svg
               width="20"

@@ -1,5 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import SectionDivider from "@/components/SectionDivider";
+import TextLink from "@/components/TextLink";
 import TransitionWrapper from "@/components/TransitionWrapper";
 import ContactForm from "@/components/contact/ContactForm";
 import { createPageMetadata } from "@/lib/metadata";
@@ -24,7 +25,7 @@ export default function ContactPage() {
         />
 
         <TransitionWrapper delay={0}>
-          <p className="mb-8 text-base leading-relaxed text-secondary">
+          <p className="mb-8 text-body text-secondary">
             Interested in working together, booking a talk, or just want to
             connect? Fill out this form or email me at bmelchior79@gmail.com.
           </p>
@@ -34,31 +35,26 @@ export default function ContactPage() {
         <SectionDivider />
 
         <nav
-          className="flex flex-wrap justify-center gap-6 text-sm"
+          className="flex flex-wrap justify-center gap-6"
           aria-label="Contact links"
         >
-          <a
-            href="mailto:bmelchior79@gmail.com"
-            className="text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
-          >
+          <TextLink href="mailto:bmelchior79@gmail.com" className="text-sm">
             Email
-          </a>
-          <a
+          </TextLink>
+          <TextLink
             href="https://www.linkedin.com/in/bmelchior/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
+            external
+            className="text-sm"
           >
             LinkedIn
-          </a>
-          <a
+          </TextLink>
+          <TextLink
             href="https://www.instagram.com/bmelchior"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
+            external
+            className="text-sm"
           >
             Instagram
-          </a>
+          </TextLink>
         </nav>
       </div>
     </div>

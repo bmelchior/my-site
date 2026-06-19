@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import TagPill from "@/components/TagPill";
+import TextLink from "@/components/TextLink";
 import TransitionWrapper from "@/components/TransitionWrapper";
 import ProjectCarousel from "@/components/work/ProjectCarousel";
 import ProjectDetailLinks from "@/components/work/ProjectDetailLinks";
@@ -20,7 +21,7 @@ function renderBody(content: string | string[]) {
   return paragraphs.map((paragraph) => (
     <p
       key={paragraph.slice(0, 40)}
-      className="text-base leading-relaxed text-primary"
+      className="text-body text-secondary"
     >
       {paragraph}
     </p>
@@ -67,25 +68,23 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               ))}
             </div>
 
-            <h1 className="text-3xl font-semibold text-primary md:text-4xl lg:text-5xl">
-              {project.title}
-            </h1>
-            <p className="mt-4 text-lg text-secondary">{project.description}</p>
+            <h1 className="text-page-h1 text-primary">{project.title}</h1>
+            <p className="mt-5 text-body-lg text-secondary">
+              {project.description}
+            </p>
             {project.links && <ProjectDetailLinks links={project.links} />}
 
-            <div className="mt-12 space-y-12">
+            <div className="mt-14 space-y-14">
               {sections.hypothesis && (
-                <section className="rounded-lg bg-highlight p-2">
-                  <h2 className="text-sm font-bold text-secondary">
-                    Hypothesis
-                  </h2>
+                <section className="rounded-[var(--radius-md)] border border-border bg-surface-2 p-6">
+                  <h2 className="text-meta text-subtle">Hypothesis</h2>
                   {(Array.isArray(sections.hypothesis)
                     ? sections.hypothesis
                     : [sections.hypothesis]
                   ).map((paragraph) => (
                     <p
                       key={paragraph.slice(0, 40)}
-                      className="mt-1 text-sm text-primary"
+                      className="mt-2 text-body text-primary"
                     >
                       {paragraph}
                     </p>
@@ -94,9 +93,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               )}
 
               <section>
-                <h2 className="mb-4 text-xl font-semibold text-primary">
-                  Timeline
-                </h2>
+                <h2 className="mb-4 text-card-title text-primary">Timeline</h2>
                 <div className="space-y-4">
                   {renderBody(sections.timeline ?? "Placeholder")}
                 </div>
@@ -105,7 +102,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               {!project.hideContentSections && (
                 <>
                   <section>
-                    <h2 className="mb-4 text-xl font-semibold text-primary">
+                    <h2 className="mb-4 text-card-title text-primary">
                       The Problem
                     </h2>
                     <div className="space-y-4">
@@ -114,7 +111,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </section>
 
                   <section>
-                    <h2 className="mb-4 text-xl font-semibold text-primary">
+                    <h2 className="mb-4 text-card-title text-primary">
                       The Solution
                     </h2>
                     <div className="space-y-4">
@@ -123,7 +120,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </section>
 
                   <section>
-                    <h2 className="mb-4 text-xl font-semibold text-primary">
+                    <h2 className="mb-4 text-card-title text-primary">
                       How AI Is Used
                     </h2>
                     <div className="space-y-4">
@@ -132,17 +129,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </section>
 
                   <section>
-                    <h2 className="mb-4 text-xl font-semibold text-primary">
+                    <h2 className="mb-4 text-card-title text-primary">
                       Tech Stack
                     </h2>
                     <div className="space-y-4">
-                      <p className="text-base leading-relaxed text-primary">
+                      <p className="text-body text-secondary">
                         {sections.techStack.intro}
                       </p>
                       {sections.techStack.items.length > 0 && (
                         <div className="flex flex-wrap gap-2">
                           {sections.techStack.items.map((item) => (
-                            <TagPill key={item} label={item} size="md" />
+                            <TagPill key={item} label={item} />
                           ))}
                         </div>
                       )}
@@ -150,7 +147,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </section>
 
                   <section>
-                    <h2 className="mb-4 text-xl font-semibold text-primary">
+                    <h2 className="mb-4 text-card-title text-primary">
                       What I Learned
                     </h2>
                     <div className="space-y-4">
@@ -163,21 +160,18 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </TransitionWrapper>
 
           <nav
-            className="mt-16 flex flex-col items-center gap-8"
+            className="mt-16 flex flex-col items-center gap-8 border-t border-border pt-10"
             aria-label="Project navigation"
           >
-            <Link
-              href="/work"
-              className="text-sm font-medium text-accent transition-colors duration-200 ease-in-out hover:text-accent-hover"
-            >
+            <TextLink href="/work" className="text-sm font-medium">
               Back to Work
-            </Link>
+            </TextLink>
 
             <div className="flex w-full items-center justify-between">
               {prev ? (
                 <Link
                   href={`/work/${prev.slug}`}
-                  className="text-sm text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
+                  className="link-editorial text-sm text-secondary"
                 >
                   &larr; Previous Project
                 </Link>
@@ -187,7 +181,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               {next ? (
                 <Link
                   href={`/work/${next.slug}`}
-                  className="text-sm text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
+                  className="link-editorial text-sm text-secondary"
                 >
                   Next Project &rarr;
                 </Link>

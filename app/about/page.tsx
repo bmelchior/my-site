@@ -1,6 +1,7 @@
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import SectionDivider from "@/components/SectionDivider";
+import SectionHeader from "@/components/SectionHeader";
 import TransitionWrapper from "@/components/TransitionWrapper";
 import CareerTimeline from "@/components/about/CareerTimeline";
 import HowIWork from "@/components/about/HowIWork";
@@ -38,15 +39,15 @@ export default function AboutPage() {
       <PageHeader title="About" />
 
       <TransitionWrapper delay={0}>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-[auto_1fr] md:gap-12">
-          <div className="overflow-hidden rounded-lg">
-            <div className="relative h-[278px] w-[278px]">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[auto_1fr] md:gap-14">
+          <div className="aspect-square w-full max-w-[280px] shrink-0 self-start overflow-hidden rounded-[var(--radius-md)] border border-border md:w-[280px]">
+            <div className="relative size-full">
               <Image
                 src="/BM_headshot.png"
                 alt="Brandon Melchior portrait"
                 fill
-                className="rounded-lg object-cover object-top"
-                sizes="278px"
+                className="object-cover object-top"
+                sizes="280px"
                 priority
               />
             </div>
@@ -63,7 +64,7 @@ export default function AboutPage() {
               ) : (
                 <p
                   key={block.text.slice(0, 40)}
-                  className="text-base leading-relaxed text-primary"
+                  className="text-body text-secondary"
                 >
                   {block.text}
                 </p>
@@ -77,10 +78,8 @@ export default function AboutPage() {
 
       <TransitionWrapper delay={100}>
         <section className="mb-16">
-          <h2 className="mb-4 text-2xl font-semibold text-primary">
-            Leadership Style
-          </h2>
-          <p className="mb-8 text-sm font-bold text-secondary">
+          <SectionHeader title="Leadership Style" />
+          <p className="mb-8 text-meta text-muted">
             Transparent • Pragmatic • Integrative • Coaching-Oriented •
             Opinionated
           </p>
@@ -88,9 +87,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="mb-8 text-2xl font-semibold text-primary">
-            Career Highlights
-          </h2>
+          <SectionHeader title="Career Highlights" />
           <CareerTimeline />
         </section>
       </TransitionWrapper>

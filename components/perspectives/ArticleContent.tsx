@@ -6,7 +6,7 @@ type ArticleContentProps = {
 
 export default function ArticleContent({ content }: ArticleContentProps) {
   return (
-    <div className="article-content mt-8 text-base leading-relaxed text-primary">
+    <div className="article-content mt-8">
       <Markdown>{content}</Markdown>
     </div>
   );

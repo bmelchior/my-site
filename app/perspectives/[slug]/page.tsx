@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleContent from "@/components/perspectives/ArticleContent";
+import TagPill from "@/components/TagPill";
+import TextLink from "@/components/TextLink";
 import TransitionWrapper from "@/components/TransitionWrapper";
 import { createPageMetadata } from "@/lib/metadata";
 import {
@@ -44,11 +46,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <article className="content-container py-12 md:py-16">
       <div className="mx-auto max-w-[720px]">
         <TransitionWrapper delay={0}>
-          <h1 className="text-3xl font-semibold text-primary lg:text-4xl">
-            {article.title}
-          </h1>
+          <TagPill label={article.topic} />
+          <h1 className="mt-4 text-page-h1 text-primary">{article.title}</h1>
           <time
-            className="mt-4 block text-sm text-secondary"
+            className="mt-4 block text-meta text-subtle"
             dateTime={getIsoDate(article.date)}
           >
             {article.date}
@@ -60,17 +61,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           className="mt-12 flex flex-col gap-6 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between"
           aria-label="Article navigation"
         >
-          <Link
-            href="/perspectives"
-            className="text-sm font-medium text-accent transition-colors duration-200 ease-in-out hover:text-accent-hover"
-          >
+          <TextLink href="/perspectives" className="text-sm font-medium">
             &larr; Back to Perspectives
-          </Link>
+          </TextLink>
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-8">
             {prev && (
               <Link
                 href={`/perspectives/${prev.slug}`}
-                className="text-sm text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
+                className="link-editorial text-sm text-secondary"
               >
                 &larr; {prev.title}
               </Link>
@@ -78,7 +76,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             {next && (
               <Link
                 href={`/perspectives/${next.slug}`}
-                className="text-sm text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
+                className="link-editorial text-sm text-secondary"
               >
                 {next.title} &rarr;
               </Link>

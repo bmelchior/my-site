@@ -10,35 +10,49 @@ type WorkProjectCardProps = {
   project: Project;
   index: number;
   aspectRatio?: "4/3" | "16/9" | "square";
+  variant?: "default" | "lab";
 };
 
 export default function WorkProjectCard({
   project,
   index,
   aspectRatio = "16/9",
+  variant = "default",
 }: WorkProjectCardProps) {
+  const isLab = variant === "lab";
+  const cardVariant = isLab ? "lab" : "product";
+
   const card = (
-    <Card className="overflow-hidden">
-      <div className="flex flex-col md:flex-row">
-        <div className="w-full shrink-0 md:w-[280px] lg:w-[320px]">
+    <Card variant={cardVariant} className="overflow-hidden">
+      <div className={`flex flex-col ${isLab ? "" : "md:flex-row"}`}>
+        <div
+          className={`w-full shrink-0 ${
+            isLab ? "" : "md:w-[280px] lg:w-[320px]"
+          }`}
+        >
           <ProjectCardImage
             alt={project.imageAlt}
             src={project.cardImage}
             aspectRatio={aspectRatio}
             objectPosition={project.cardImagePosition}
-            className="rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
+            objectFit={project.cardImageFit}
+            className={isLab ? "rounded-t-[var(--radius-md)]" : "md:rounded-l-[28px] md:rounded-tr-none rounded-t-[28px]"}
             showAppStoreBadge={project.appStoreAvailable}
             workInProgress={project.tags.includes("In Progress")}
           />
         </div>
-        <div className="flex flex-col justify-center p-6">
-          <ProjectCardTitle as="h2" className="text-xl">
+        <div className={`flex flex-col justify-center ${isLab ? "p-5" : "p-7 md:p-8"}`}>
+          <ProjectCardTitle as="h2" className={isLab ? "text-lg" : ""}>
             {project.title}
           </ProjectCardTitle>
-          <p className="mt-3 text-base leading-relaxed text-secondary">
+          <p
+            className={`mt-3 leading-relaxed text-secondary ${
+              isLab ? "text-sm" : "text-body"
+            }`}
+          >
             {project.description}
           </p>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className={`flex flex-wrap gap-2 ${isLab ? "mt-3" : "mt-4"}`}>
             {project.tags.map((tag) => (
               <TagPill key={tag} label={tag} />
             ))}
@@ -55,7 +69,7 @@ export default function WorkProjectCard({
       ) : (
         <Link
           href={`/work/${project.slug}`}
-          className="block transition-opacity duration-200 ease-in-out hover:opacity-95"
+          className="block transition-opacity duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:opacity-95"
         >
           {card}
         </Link>

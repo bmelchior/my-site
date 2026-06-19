@@ -18,9 +18,7 @@ export default function PerspectivesSidebar({
   return (
     <aside className="lg:sticky lg:top-24 lg:self-start">
       <div className="mb-8 lg:mb-12">
-        <h2 className="mb-4 hidden text-lg font-semibold text-primary lg:block">
-          Topics
-        </h2>
+        <h2 className="mb-4 hidden text-meta text-subtle lg:block">Topics</h2>
         <div className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
           {topics.map((topic) => (
             <button
@@ -29,10 +27,10 @@ export default function PerspectivesSidebar({
               onClick={() =>
                 setActiveTopic(activeTopic === topic ? null : topic)
               }
-              className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors duration-200 ease-in-out lg:rounded-none lg:bg-transparent lg:px-0 lg:py-1 lg:text-left ${
+              className={`shrink-0 transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] lg:text-left ${
                 activeTopic === topic
-                  ? "bg-accent text-surface lg:bg-transparent lg:font-medium lg:text-primary"
-                  : "bg-highlight text-secondary hover:text-primary lg:bg-transparent"
+                  ? "chip-role chip-role--active"
+                  : "chip-tech hover:border-border-strong hover:text-primary"
               }`}
             >
               {topic}
@@ -42,13 +40,13 @@ export default function PerspectivesSidebar({
       </div>
 
       <div>
-        <h2 className="mb-4 text-lg font-semibold text-primary">Recent</h2>
-        <ul className="space-y-3">
+        <h2 className="mb-4 text-meta text-subtle">Recent</h2>
+        <ul className="space-y-4">
           {recentArticles.map((article) => (
             <li key={article.slug}>
               <Link
                 href={`/perspectives/${article.slug}`}
-                className="text-sm text-secondary transition-colors duration-200 ease-in-out hover:text-primary"
+                className="link-editorial text-sm text-secondary"
               >
                 {article.title}
               </Link>

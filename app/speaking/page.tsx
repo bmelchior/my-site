@@ -32,13 +32,13 @@ export default function SpeakingPage() {
       <SectionDivider />
 
       <TransitionWrapper delay={100}>
-        <section>
-          <h2 className="text-2xl font-semibold text-primary">Book Me</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-secondary">
+        <section className="rounded-[var(--radius-lg)] border border-border bg-surface-2 p-8 md:p-12">
+          <h2 className="text-section-h2 text-primary">Book Me</h2>
+          <p className="mt-5 max-w-2xl text-body text-secondary">
             Interested in having me speak at your conference, team offsite, or
             leadership event? I&apos;d love to hear about your audience and goals.
           </p>
-          <div className="mt-6">
+          <div className="mt-8">
             <Button href="mailto:bmelchior79@gmail.com" variant="primary">
               Get in Touch
             </Button>

@@ -10,6 +10,7 @@ type ProjectCardImageProps = {
   showAppStoreBadge?: boolean;
   workInProgress?: boolean;
   objectPosition?: "top" | "bottom";
+  objectFit?: "cover" | "contain";
 };
 
 export default function ProjectCardImage({
@@ -20,6 +21,7 @@ export default function ProjectCardImage({
   showAppStoreBadge = false,
   workInProgress = false,
   objectPosition = "top",
+  objectFit = "cover",
 }: ProjectCardImageProps) {
   const aspectClass =
     aspectRatio === "square"
@@ -32,28 +34,34 @@ export default function ProjectCardImage({
     <div className="relative">
       {src ? (
         <div
-          className={`relative w-full overflow-hidden border border-border bg-highlight ${aspectClass} ${className}`}
+          className={`relative w-full overflow-hidden border-b border-border ${
+            objectFit === "contain" ? "bg-[#F5F0E8]" : "bg-surface-2"
+          } ${aspectClass} ${className}`}
         >
           <Image
             src={src}
             alt={alt}
             fill
-            sizes="(max-width: 768px) 100vw, 320px"
-            className={`object-cover ${
-              objectPosition === "bottom" ? "object-bottom" : "object-top"
-            }`}
+            sizes="(max-width: 768px) 100vw, 480px"
+            className={
+              objectFit === "contain"
+                ? "object-contain p-6"
+                : `object-cover ${
+                    objectPosition === "bottom" ? "object-bottom" : "object-top"
+                  }`
+            }
           />
         </div>
       ) : (
         <PlaceholderImage
           alt={alt}
           aspectRatio={aspectRatio}
-          className={`border border-border ${className}`}
+          className={`border-b border-border ${className}`}
           workInProgress={workInProgress}
         />
       )}
       {showAppStoreBadge && (
-        <div className="absolute left-3 top-3">
+        <div className="absolute left-4 top-4">
           <AppStoreBadge />
         </div>
       )}

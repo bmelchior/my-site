@@ -12,25 +12,23 @@ export default function ArticleCard({ article }: ArticleCardProps) {
   return (
     <article>
       <Link href={`/perspectives/${article.slug}`} className="group block">
-        <Card className="p-8">
-          <h2 className="text-xl font-semibold text-primary transition-colors duration-200 ease-in-out group-hover:text-accent-hover">
+        <Card variant="default" className="p-7 md:p-8">
+          <div className="flex flex-wrap items-center gap-3">
+            <TagPill label={article.topic} variant="tech" />
+            <time
+              className="text-meta text-subtle"
+              dateTime={getIsoDate(article.date)}
+            >
+              {article.date}
+            </time>
+          </div>
+          <h2 className="mt-4 text-card-title text-primary transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0.5 group-hover:text-accent">
             {article.title}
           </h2>
-          <time
-            className="mt-2 block text-sm text-secondary"
-            dateTime={getIsoDate(article.date)}
-          >
-            {article.date}
-          </time>
-          <p className="mt-4 text-base leading-relaxed text-secondary">
-            {article.excerpt}
-          </p>
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-            <TagPill label={article.topic} />
-            <span className="text-sm font-medium text-accent transition-colors duration-200 ease-in-out group-hover:text-accent-hover">
-              Read &rarr;
-            </span>
-          </div>
+          <p className="mt-3 text-body text-secondary">{article.excerpt}</p>
+          <span className="mt-5 inline-block text-sm font-medium text-primary underline decoration-border-strong underline-offset-4 transition-colors duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-accent group-hover:decoration-accent">
+            Read &rarr;
+          </span>
         </Card>
       </Link>
     </article>

@@ -22,14 +22,14 @@ export default function PlaceholderImage({
     <div
       role="img"
       aria-label={workInProgress ? `${alt} — Work in progress` : alt}
-      className={`flex w-full items-center justify-center bg-highlight ${aspectClass} ${className} ${
-        workInProgress ? "shadow-[inset_0_2px_16px_rgba(0,0,0,0.06)]" : ""
-      }`}
+      className={`relative flex w-full items-center justify-center overflow-hidden bg-surface-2 ${aspectClass} ${className}`}
     >
+      {/* Abstract UI panel */}
+      <div className="absolute inset-4 rounded-[var(--radius-sm)] border border-border bg-surface-3 opacity-60" />
+      <div className="absolute bottom-6 left-6 right-6 h-2 rounded-full bg-border" />
+      <div className="absolute bottom-10 left-6 h-2 w-1/3 rounded-full bg-border-strong" />
       {workInProgress && (
-        <span className="text-sm font-bold tracking-wide text-secondary/60">
-          WORK IN PROGRESS
-        </span>
+        <span className="chip-status relative z-10">WORK IN PROGRESS</span>
       )}
     </div>
   );
