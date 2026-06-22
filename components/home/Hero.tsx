@@ -14,12 +14,11 @@ export default function Hero() {
           </h1>
           <div className="mt-10 max-w-[600px] space-y-5">
             <p className="text-body-lg text-secondary">
-              Twenty years of design leadership taught me how to think about
+              Twenty years of design leadership taught me how to design andthink about
               products. AI gave me the power to build them.
             </p>
             <p className="text-body-lg text-secondary">
-              Now I ship my own ideas and help others turn AI from something
-              overwhelming to empowering.
+              Now I prototype, build and ship my ideas and help team members transition from intimidated to empowered.
             </p>
           </div>
         </TransitionWrapper>

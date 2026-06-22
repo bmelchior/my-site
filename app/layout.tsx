@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import {
+  Glegoo,
   IBM_Plex_Mono,
-  Instrument_Serif,
   Inter,
 } from "next/font/google";
 import SiteShell from "@/components/SiteShell";
@@ -13,10 +13,10 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const instrumentSerif = Instrument_Serif({
+const glegoo = Glegoo({
   subsets: ["latin"],
-  variable: "--font-instrument-serif",
-  weight: ["400"],
+  variable: "--font-glegoo",
+  weight: ["400", "700"],
 });
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrumentSerif.variable} ${ibmPlexMono.variable}`}
+      className={`${inter.variable} ${glegoo.variable} ${ibmPlexMono.variable}`}
     >
       <body className={`${inter.className} antialiased`}>
         <SiteShell>{children}</SiteShell>

@@ -11,7 +11,7 @@ import { featuredProjects, personalProjects } from "@/lib/data/projects";
 export const metadata = createPageMetadata({
   title: "Home",
   description:
-    "Design leader turned builder. I ship real products with AI — not decks about AI.",
+    "Design leader turned builder. I build, ship, and lead with AI — empowering others to do the same.",
   path: "/",
 });
 
@@ -39,7 +39,7 @@ const doneBlocks = [
   },
   {
     images: [
-      { src: "/images/done/Dish_Network-Logo-w.png", alt: "Dish", compact: true },
+      { src: "/images/done/Dish_Network-Logo-w.png", alt: "Dish", compact: true, offsetY: 3 },
       { src: "/images/done/Ticketmaster-Logo-w.png", alt: "Ticketmaster" },
       { src: "/images/done/Axs_logo-w.png", alt: "AXS", compact: true },
     ],
@@ -69,7 +69,7 @@ export default function HomePage() {
         <TransitionWrapper delay={100}>
           <SectionHeader
             title="What I've Built"
-            description="Great products don't start with ideas. They start with a clear-eyed read of a problem or an opportunity. Below are some real-world examples and experiments."
+            description="Great products don't start with ideas. They start with a clear-eyed read of a problem or an opportunity."
           />
           <FeaturedWorkGrid projects={featuredProjects} variant="home" />
         </TransitionWrapper>
@@ -94,7 +94,7 @@ export default function HomePage() {
         <TransitionWrapper delay={300}>
           <SectionHeader
             title="Personal Projects"
-            description="Smaller experiments and side builds — quick ideas I ship to learn, scratch an itch, or test something new."
+            description="Experiments and side builds — quick personal projects to organize or stay entertained."
           />
           <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
             {personalProjects.map((project, index) => (

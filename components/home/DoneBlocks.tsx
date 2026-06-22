@@ -2,6 +2,7 @@ export type DoneBlockLogo = {
   src: string;
   alt: string;
   compact?: boolean;
+  offsetY?: number;
 };
 
 export type DoneBlock = {
@@ -53,6 +54,11 @@ export default function DoneBlocks({ blocks }: DoneBlocksProps) {
                         key={logo.src}
                         src={logo.src}
                         alt={logo.alt}
+                        style={
+                          logo.offsetY
+                            ? { transform: `translateY(-${logo.offsetY}px)` }
+                            : undefined
+                        }
                         className={
                           logo.compact
                             ? "h-[24px] w-[18%] shrink-0 bg-transparent object-contain object-center"

@@ -59,21 +59,21 @@
   --duration-fast: 200ms;
 
   /* Typography */
-  --font-display: "Instrument Serif", Georgia, serif;
+  --font-display: "Glegoo", Georgia, serif;
   --font-serif: var(--font-display);
   --pullquote-font-size: clamp(1.35rem, 2.5vw, 1.75rem);
   --pullquote-indent: 0;
 
   /* Type scale — edit here; utilities in this file reference these tokens */
-  --type-hero-font-size: clamp(3.4rem, 15vw, 5.5rem);
-  --type-hero-font-size-md: clamp(4.5rem, 10vw, 9.5rem);
-  --type-hero-line-height: 0.9;
-  --type-hero-line-height-md: 0.88;
+  --type-hero-font-size: clamp(2.75rem, 12vw, 4.5rem);
+  --type-hero-font-size-md: clamp(3.75rem, 8vw, 7.5rem);
+  --type-hero-line-height: 1.05;
+  --type-hero-line-height-md: 1.02;
   --type-hero-letter-spacing: 0;
 
-  --type-hero-emphasis-font-size: clamp(3.6rem, 16vw, 6rem);
-  --type-hero-emphasis-font-size-md: clamp(5rem, 11vw, 10rem);
-  --type-hero-emphasis-line-height: 0.88;
+  --type-hero-emphasis-font-size: clamp(2.9rem, 13vw, 5rem);
+  --type-hero-emphasis-font-size-md: clamp(4.25rem, 9vw, 8rem);
+  --type-hero-emphasis-line-height: 1;
   --type-hero-emphasis-letter-spacing: -1.2px;
 
   --type-page-h1-font-size: clamp(3.5rem, 8vw, 7rem);
@@ -116,7 +116,7 @@
   --color-dark-border: var(--color-dark-border);
   --color-inverse: var(--color-text-inverse);
   --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-display: var(--font-instrument-serif), Georgia, serif;
+  --font-display: var(--font-glegoo), Georgia, serif;
   --font-mono: var(--font-ibm-plex-mono), "SFMono-Regular", Consolas, monospace;
   --radius-card: var(--radius-lg);
   --radius-button: 999px;
