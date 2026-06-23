@@ -37,7 +37,8 @@ export type Project = {
   cardImageFit?: "cover" | "contain";
   detailPageDisabled?: boolean;
   hideContentSections?: boolean;
-  links?: [ProjectLink, ProjectLink];
+  comingSoon?: boolean;
+  links?: ProjectLink[];
   images: ProjectImage[];
   sections: ProjectSections;
 };
@@ -59,8 +60,7 @@ export const projects: Project[] = [
     featured: true,
     appStoreAvailable: true,
     imageAlt: "Teller Family project preview",
-    cardImage: "/work/teller-family/hero-card.jpg",
-    cardImagePosition: "bottom",
+    cardImage: "/work/teller-family/hero-card.png",
     links: [
       { label: "Website", href: "https://tellerfamily.app/" },
       { label: "App Store", href: "https://apps.apple.com/app/id6763470676" },
@@ -140,11 +140,12 @@ export const projects: Project[] = [
     featured: true,
     appStoreAvailable: true,
     imageAlt: "The Usher project preview",
-    cardImage: "/work/the-usher/hero-card.jpg",
-    cardImagePosition: "bottom",
+    cardImage: "/work/the-usher/hero-card.png",
     links: [
-      { label: "Link 1", href: "#" },
-      { label: "Link 2", href: "#" },
+      {
+        label: "App Store",
+        href: "https://apps.apple.com/us/app/the-usher-movies/id6761689827",
+      },
     ],
     images: [
       {
@@ -175,10 +176,10 @@ export const projects: Project[] = [
       solution:
         "I built The Usher to help me find what I want quickly — the RT score and where to stream it. And for when I want any other information, I implemented a chat interface with a movie expert to answer any question I have.",
       howAiIsUsed:
-        'The "Ask the Usher" feature uses Claude as a conversational movie expert that is constrained to answering questions about the movie page you\'re on. And I added another chat widget to the home screen to answer questions about any movie and make recommendations.',
+        'The "Ask the Usher" feature uses Claude as a conversational movie expert that is constrained to answering questions about the movie page you\'re on. And I added another chat widget to the home screen to help make recommendations.',
       techStack: {
         intro:
-          "A web and mobile stack connected to movie databases and Claude for conversational recommendations.",
+          "A mobile stack connected to movie databases and Claude for conversational recommendations.",
         items: [
           "Next.js",
           "Expo",
@@ -190,7 +191,7 @@ export const projects: Project[] = [
         ],
       },
       whatILearned:
-        "This is a very simple app. But a key decision I made was to constrain the AI to the movie page you're on, which means it answers questions based on the data it's trained on. This means it doesn't stray from being a movie expert (and doesn't search the web when it doesn't know something). But its data is always 1-2 years old. So The Usher doesn't know much about new movies.",
+        "This is a very simple app. It does 3 things. But a key decision I made was to constrain the AI to the data it's trained on, so its answers have a sharper focus. As a result, it won't search the web when it doesn't know something, including information about new movies. Since I'm not promoting the app, and I don't watch a lot of brand new movies at home, this is a limitation I'm willing to live with.",
     },
   },
   {
@@ -283,6 +284,7 @@ export const projects: Project[] = [
     featured: true,
     detailPageDisabled: true,
     hideContentSections: true,
+    comingSoon: true,
     imageAlt: "Stridable logo",
     cardImage: "/work/dyslexia-edtech/hero-card.png",
     cardImageFit: "contain",
@@ -352,6 +354,70 @@ export const projects: Project[] = [
       },
       whatILearned:
         "The biggest unlock wasn't the agents themselves. It was showing a non-technical team that AI could be shaped to fit their specific work, not the other way around. Adoption jumped when people stopped thinking of AI as a generic tool and started seeing it as something built for them. And the most effective agents weren't the most sophisticated ones. Inspired by these agents, other teams in the company have built their own custom agents.",
+    },
+  },
+  {
+    slug: "ai-simply",
+    title: "AI Simply",
+    description:
+      "After leading Intro to AI for Non-Technical Teams workshops, I made these easy-to-understand guides to help more people use AI better.",
+    cardDescription:
+      "After leading Intro to AI for Non-Technical Teams workshops, I made these easy-to-understand guides to help more people use AI better.",
+    tags: ["AI", "Education"],
+    featured: true,
+    imageAlt: "AI Simply light bulb illustration with neural network pattern",
+    cardImage: "/work/ai-simply/hero-card.png",
+    cardImageFit: "contain",
+    links: [{ label: "Website", href: "https://www.aisimply.ai" }],
+    images: [
+      {
+        src: "/work/ai-simply/1.png",
+        alt: "AI Simply homepage hero — practical AI education without the jargon",
+      },
+      {
+        src: "/work/ai-simply/2.png",
+        alt: "AI Simply guides page showing The AI Basics Bundle and Which AI Is Right for You?",
+      },
+      {
+        src: "/work/ai-simply/3.png",
+        alt: "AI for Work Without the Jargon product page on AI Simply",
+      },
+      {
+        src: "/work/ai-simply/4.png",
+        alt: "When Should I Use AI? guide cover on AI Simply",
+      },
+      {
+        src: "/work/ai-simply/5.png",
+        alt: "Start here first — AI Fundamentals guide introduction on AI Simply",
+      },
+      {
+        src: "/work/ai-simply/6.png",
+        alt: "When should you use AI? You probably already are — guide page with AI sparkle icons",
+      },
+      {
+        src: "/work/ai-simply/7.png",
+        alt: "Which AI Is Right For You? guide cover on AI Simply",
+      },
+      {
+        src: "/work/ai-simply/8.png",
+        alt: "There's more than one AI — guide page comparing ChatGPT, Claude, and Gemini",
+      },
+    ],
+    sections: {
+      timeline: "Website and guides built in two weeks.",
+      problem:
+        "Leading Intro to AI workshops at work helped me step outside of my bubble and realize there's real intimidation and resistance to AI. And it all centers around a lack of understanding — both in what AI actually is and how it works. Companies are giving employees access to AI, but not the education needed to use it effectively. Online resources are often either too technical or too vague.",
+      solution:
+        "AI is here to stay. Regardless of our individual roles, I believe everyone should at least understand it. So I created a set of easy-to-understand guides that translate what I know into practical reference material, so more people can adopt AI with clarity, not guesswork. Like my workshops, each guide builds on the previous one.",
+      howAiIsUsed:
+        "I built the website in Cursor. For the guides, I gave Claude a voice and tone guideline, and gave it an outline for each guide. I then took the outline, refined it, and designed the guides in InDesign.",
+      techStack: {
+        intro:
+          "React Web App, built with Cursor.",
+        items: [],
+      },
+      whatILearned:
+        "Don't assume. Listen. Meet people where they are. Foundational knowledge and repeatable patterns matter more than covering every feature a model can do.",
     },
   },
   {
@@ -453,6 +519,7 @@ export const projects: Project[] = [
 const featuredPriority: Partial<Record<string, number>> = {
   "dyslexia-edtech": 0,
   "chat-workflow-agents": 1,
+  "ai-simply": 2,
 };
 
 export const featuredProjects = projects
@@ -466,6 +533,9 @@ export const featuredProjects = projects
   });
 export const personalProjects = projects.filter((p) => p.personal);
 
+/** Featured + personal — matches homepage sections and prev/next nav order */
+export const workNavProjects = [...featuredProjects, ...personalProjects];
+
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
@@ -474,10 +544,12 @@ export function getAdjacentProjects(slug: string): {
   prev: Project | null;
   next: Project | null;
 } {
-  const index = projects.findIndex((p) => p.slug === slug);
+  const index = workNavProjects.findIndex((p) => p.slug === slug);
   if (index === -1) return { prev: null, next: null };
+
   return {
-    prev: index > 0 ? projects[index - 1] : null,
-    next: index < projects.length - 1 ? projects[index + 1] : null,
+    prev: index > 0 ? workNavProjects[index - 1] : null,
+    next:
+      index < workNavProjects.length - 1 ? workNavProjects[index + 1] : null,
   };
 }

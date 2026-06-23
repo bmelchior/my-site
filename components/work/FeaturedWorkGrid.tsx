@@ -20,6 +20,7 @@ function ProjectCardContent({ project }: { project: Project }) {
         objectPosition={project.cardImagePosition}
         objectFit={project.cardImageFit}
         showAppStoreBadge={project.appStoreAvailable}
+        showComingSoonBadge={project.comingSoon}
         workInProgress={project.tags.includes("In Progress")}
       />
       <div className="p-7 md:p-8">
@@ -56,7 +57,9 @@ export default function FeaturedWorkGrid({
           </Card>
         );
 
-        const wrapperClass = "block h-full";
+        const wrapperClass = project.comingSoon
+          ? "group block h-full"
+          : "block h-full";
 
         return project.detailPageDisabled ? (
           <div key={project.slug} className={wrapperClass}>

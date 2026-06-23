@@ -1,16 +1,16 @@
 const timelineEntries = [
   {
-    year: "2024–Present: Started building",
+    year: "2025–Present: Started building",
     description:
       "Designing and shipping AI-powered products — Teller Family, The Usher, Teller Stories, and a dyslexia EdTech suite — from idea to App Store.",
   },
   {
     year: "2022–Present: Leading design at Dish and AXS",
-    description: "VP of Product Design, leading designers and researchers across consumer and enterprise experiences.",
+    description: "VP of Product Design, leading designers and researchers across consumer and enterprise experiences, and evelevating the role they plan in an organization.",
   },
   {
     year: "2020–2022: Raised the bar at Capital One and NETGEAR",
-    description: "Lifted conversion metrics that drove a 4.5% increase in funded auto loans at Capital One. Built a design system and elevated research as a core function at NETGEAR.",
+    description: "Lifted conversion metrics that drove a 4.5% increase in funded auto loans at Capital One. Built a small team and elevated research as a core function at NETGEAR.",
   },
   {
     year: "2017–2020: Transformed design at Ticketmaster",

@@ -2,7 +2,6 @@ import PageHeader from "@/components/PageHeader";
 import SectionDivider from "@/components/SectionDivider";
 import TextLink from "@/components/TextLink";
 import TransitionWrapper from "@/components/TransitionWrapper";
-import ContactForm from "@/components/contact/ContactForm";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -25,11 +24,10 @@ export default function ContactPage() {
         />
 
         <TransitionWrapper delay={0}>
-          <p className="mb-8 text-body text-secondary">
+          <p className="text-body text-secondary">
             Interested in working together, booking a talk, or just want to
-            connect? Fill out this form or email me at bmelchior79@gmail.com.
+            connect? Email me at bmelchior79@gmail.com.
           </p>
-          <ContactForm />
         </TransitionWrapper>
 
         <SectionDivider />

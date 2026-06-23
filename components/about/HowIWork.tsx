@@ -2,8 +2,8 @@ const workEntries = [
   {
     title: "Elevating Work & People",
     paragraphs: [
-      "I balance setting a high bar with an encouraging approach that brings the best work out of people.",
-      "I cut through noise to find and articulate what matters most, breaking down a complex idea so it clicks.",
+      "I balance setting a high bar with an empathetic, encouraging approach that brings the best work out of people.",
+      "I cut through noise to find and articulate what matters most, breaking down complex ideas into something simple and easy to understand.",
     ],
   },
   {

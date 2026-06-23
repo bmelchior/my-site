@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AppStoreBadge from "@/components/AppStoreBadge";
+import ComingSoonBadge from "@/components/ComingSoonBadge";
 import PlaceholderImage from "@/components/PlaceholderImage";
 
 type ProjectCardImageProps = {
@@ -8,6 +9,7 @@ type ProjectCardImageProps = {
   aspectRatio?: "4/3" | "16/9" | "square";
   className?: string;
   showAppStoreBadge?: boolean;
+  showComingSoonBadge?: boolean;
   workInProgress?: boolean;
   objectPosition?: "top" | "bottom";
   objectFit?: "cover" | "contain";
@@ -19,6 +21,7 @@ export default function ProjectCardImage({
   aspectRatio = "4/3",
   className = "",
   showAppStoreBadge = false,
+  showComingSoonBadge = false,
   workInProgress = false,
   objectPosition = "top",
   objectFit = "cover",
@@ -45,7 +48,7 @@ export default function ProjectCardImage({
             sizes="(max-width: 768px) 100vw, 480px"
             className={
               objectFit === "contain"
-                ? "object-contain p-6"
+                ? "object-contain"
                 : `object-cover ${
                     objectPosition === "bottom" ? "object-bottom" : "object-top"
                   }`
@@ -61,8 +64,13 @@ export default function ProjectCardImage({
         />
       )}
       {showAppStoreBadge && (
-        <div className="absolute left-4 top-4">
+        <div className="absolute bottom-4 left-4">
           <AppStoreBadge />
+        </div>
+      )}
+      {showComingSoonBadge && (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100">
+          <ComingSoonBadge />
         </div>
       )}
     </div>

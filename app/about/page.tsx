@@ -16,17 +16,17 @@ export const metadata = createPageMetadata({
 
 const bioBlocks: { text: string; variant?: "pullquote" }[] = [
   {
-    text: "I'm a design leader who became a builder. While leading product design full-time at AXS, I ship AI-powered products on my own — mobile apps, web tools, and an EdTech platform for dyslexia support.",
+    text: "I'm a design leader who became a builder. While leading product design full-time at AXS, I ship AI-powered products in my spare time — mobile apps, web tools, and an EdTech platform for dyslexia support.",
   },
   {
-    text: "I've spent 20 years leading design at companies like BuzzFeed, The New York Times, DirecTV, Ticketmaster, and Capital One. At three of those companies, I led teams that built design systems from the ground up where none existed — advocating for the investment, earning stakeholder buy-in, and designing and building in tight collaboration with engineering from day one. Across every role, I've raised the value and visibility of design and user research in organizations where design was historically undervalued — earning it a seat at the strategy table, not just a spot in the production line.",
+    text: "I've spent 20 years leading design at companies like BuzzFeed, The New York Times, DirecTV, Ticketmaster, and Capital One. At three of those companies, I led teams that built design systems from the ground up — advocating for the investment, earning stakeholder buy-in, and growing a design team that worked in tight collaboration with engineering from day one. Across every role, I've raised the value and visibility of design and user research in organizations where design was historically undervalued — earning it a seat at the strategy table, not just a spot in the production line.",
   },
   {
     text: "As a designer, AI has been empowering. For the first time, I can envision and ship an idea, and help others do the same.",
     variant: "pullquote",
   },
   {
-    text: "What drives me now is showing over telling. And coaching in a way that helps team members feel a real feeling of empowerment. AI didn't change my values — it gave me new tools to live them.",
+    text: "What drives me now is showing over telling. And helping team members develop a real feeling of empowerment. AI didn't change my values — it gave me new tools to live them.",
   },
   {
     text: "I'm based in Scottsdale, Arizona. When I'm not building, you'll find me watching a movie at home with my dog and husband, listening to vinyl, or traveling the world with my camera and my husband.",
