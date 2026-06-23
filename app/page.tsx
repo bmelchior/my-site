@@ -19,6 +19,7 @@ const doneBlocks = [
   {
     image: "/images/done/Axs_logo-w.png",
     imageAlt: "AXS",
+    smallLogo: true,
     leadIn: "AI-driven leader at AXS —",
     story:
       "Turning AI from a curiosity into a measurable capability across my team and organization.",
@@ -26,6 +27,7 @@ const doneBlocks = [
   {
     image: "/images/done/Ticketmaster-Logo-w.png",
     imageAlt: "Ticketmaster",
+    smallLogo: true,
     leadIn: "+42pt NPS lift at Ticketmaster —",
     story:
       "Led the design transformation that turned a 20-person team into a strategic function.",

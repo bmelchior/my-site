@@ -8,6 +8,7 @@ export type DoneBlockLogo = {
 export type DoneBlock = {
   image?: string;
   imageAlt?: string;
+  smallLogo?: boolean;
   images?: DoneBlockLogo[];
   leadIn: string;
   story: string;
@@ -71,7 +72,11 @@ export default function DoneBlocks({ blocks }: DoneBlocksProps) {
                   <img
                     src={block.image}
                     alt={block.imageAlt ?? ""}
-                    className="h-[40px] w-auto max-w-full bg-transparent object-contain object-left"
+                    className={
+                      block.smallLogo
+                        ? "h-[28px] w-auto max-w-full bg-transparent object-contain object-left"
+                        : "h-[40px] w-auto max-w-full bg-transparent object-contain object-left"
+                    }
                   />
                 )}
                 <div>
