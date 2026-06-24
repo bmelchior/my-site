@@ -20,7 +20,7 @@ const doneBlocks = [
     image: "/images/done/Axs_logo-w.png",
     imageAlt: "AXS",
     smallLogo: true,
-    leadIn: "AI-driven leader at AXS —",
+    leadIn: "AI-driven leader —",
     story:
       "Turning AI from a curiosity into a measurable capability across my team and organization.",
   },

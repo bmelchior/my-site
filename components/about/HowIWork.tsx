@@ -7,10 +7,10 @@ const workEntries = [
     ],
   },
   {
-    title: "Reading The Situation",
+    title: "Vision & Strategy",
     paragraphs: [
-      "I listen for what's not being said. That's the real underlying need. Whether that's mediating a team conflict, coaching a designer, or deciphering user feedback.",
-      "I deliver what's needed with empathy, whether that's motivation, reassurance, or a reframe that moves both sides toward resolution.",
+      "I work with the team to set a clear vision and the strategy to reach it — establishing principles the team can rally around and setting an iterative path to get there.",
+      "All work is rooted in discovery: user research and data ground key decisions. And every team member is encouraged to balance data with intuition, experience, and conviction.",
     ],
   },
 ];
