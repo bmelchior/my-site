@@ -47,7 +47,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <div className="mx-auto max-w-[720px]">
         <TransitionWrapper delay={0}>
           <TagPill label={article.topic} />
-          <h1 className="mt-4 text-page-h1 text-primary">{article.title}</h1>
+          <h1 className="mt-4 text-hero text-primary">{article.title}</h1>
           <time
             className="mt-4 block text-meta text-subtle"
             dateTime={getIsoDate(article.date)}

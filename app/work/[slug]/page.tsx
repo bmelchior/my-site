@@ -68,7 +68,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               ))}
             </div>
 
-            <h1 className="text-page-h1 text-primary">{project.title}</h1>
+            <h1 className="text-hero text-primary">{project.title}</h1>
             <p className="mt-5 text-body-lg text-secondary">
               {project.description}
             </p>

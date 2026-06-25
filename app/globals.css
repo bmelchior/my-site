@@ -65,20 +65,11 @@
   --pullquote-indent: 0;
 
   /* Type scale — edit here; utilities in this file reference these tokens */
-  --type-hero-font-size: clamp(2.75rem, 12vw, 4.5rem);
-  --type-hero-font-size-md: clamp(3.75rem, 8vw, 7.5rem);
-  --type-hero-line-height: 1.05;
-  --type-hero-line-height-md: 1.02;
+  --type-hero-font-size: clamp(2rem, 7vw, 3.25rem);
+  --type-hero-font-size-md: clamp(2.5rem, 4.5vw, 3.75rem);
+  --type-hero-line-height: 1.08;
+  --type-hero-line-height-md: 1.06;
   --type-hero-letter-spacing: 0;
-
-  --type-hero-emphasis-font-size: clamp(2.9rem, 13vw, 5rem);
-  --type-hero-emphasis-font-size-md: clamp(4.25rem, 9vw, 8rem);
-  --type-hero-emphasis-line-height: 1;
-  --type-hero-emphasis-letter-spacing: -1.2px;
-
-  --type-page-h1-font-size: clamp(3.5rem, 8vw, 7rem);
-  --type-page-h1-line-height: 0.9;
-  --type-page-h1-letter-spacing: -0.5px;
 
   --type-section-h2-font-size: clamp(2.4rem, 5vw, 4.5rem);
   --type-section-h2-line-height: 0.95;
@@ -232,30 +223,6 @@ body {
     line-height: var(--type-hero-line-height-md);
     letter-spacing: var(--type-hero-letter-spacing);
   }
-}
-
-.text-hero-emphasis {
-  font-family: var(--font-display);
-  font-size: var(--type-hero-emphasis-font-size);
-  line-height: var(--type-hero-emphasis-line-height);
-  letter-spacing: var(--type-hero-emphasis-letter-spacing);
-  font-weight: 400;
-  color: var(--color-text);
-}
-
-@media (min-width: 768px) {
-  .text-hero-emphasis {
-    font-size: var(--type-hero-emphasis-font-size-md);
-    letter-spacing: var(--type-hero-emphasis-letter-spacing);
-  }
-}
-
-.text-page-h1 {
-  font-family: var(--font-display);
-  font-size: var(--type-page-h1-font-size);
-  line-height: var(--type-page-h1-line-height);
-  letter-spacing: var(--type-page-h1-letter-spacing);
-  font-weight: 400;
 }
 
 .text-section-h2 {

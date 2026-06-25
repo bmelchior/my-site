@@ -29,7 +29,7 @@ export default function ComponentLibrary() {
     <div className="content-container py-12 md:py-16">
       <header className="mb-12 border-b border-border pb-10">
         <p className="text-meta text-accent">Development only</p>
-        <h1 className="mt-3 text-page-h1 text-primary">Component Library</h1>
+        <h1 className="mt-3 text-hero text-primary">Component Library</h1>
         <p className="mt-4 max-w-xl text-body-lg text-secondary">
           Executive Builder OS design system — not shipped to production.
         </p>
@@ -107,15 +107,13 @@ export default function ComponentLibrary() {
                   <code className="font-mono">--type-hero-letter-spacing</code>
                 </p>
                 <h1 className="max-w-5xl text-hero text-primary">
-                  I don&apos;t just talk about AI.
-                  <br />
-                  <span className="text-hero-emphasis">I build with it.</span>
+                  I don&apos;t just talk about AI. I build with it.
                 </h1>
               </div>
               <div>
                 <p className="text-meta text-subtle mb-2">
                   Page H1 · <code className="font-mono">PageHeader</code> ·{" "}
-                  <code className="font-mono">--type-page-h1-letter-spacing</code>
+                  <code className="font-mono">text-hero</code>
                 </p>
                 <PageHeader title="About" />
               </div>

@@ -65,27 +65,27 @@ export default function HomePage() {
       <HomeSectionNav />
 
       <section
-        id="what-ive-built"
-        className="home-section content-container pt-16 md:pt-24 pb-12 md:pb-16"
+        id="what-ive-done"
+        className="home-section pt-16 md:pt-24 pb-12 md:pb-16"
       >
         <TransitionWrapper delay={100}>
+          <div className="content-container mb-8">
+            <SectionHeader title="What I've Done" />
+          </div>
+          <DoneBlocks blocks={doneBlocks} />
+        </TransitionWrapper>
+      </section>
+
+      <section
+        id="what-ive-built"
+        className="home-section content-container pb-16 md:pb-24"
+      >
+        <TransitionWrapper delay={200}>
           <SectionHeader
             title="What I've Built"
             description="Great products don't start with ideas. They start with a clear-eyed read of a problem or an opportunity."
           />
           <FeaturedWorkGrid projects={featuredProjects} variant="home" />
-        </TransitionWrapper>
-      </section>
-
-      <section
-        id="what-ive-done"
-        className="home-section pb-16 md:pb-24"
-      >
-        <TransitionWrapper delay={200}>
-          <div className="content-container mb-8">
-            <SectionHeader title="What I've Done" />
-          </div>
-          <DoneBlocks blocks={doneBlocks} />
         </TransitionWrapper>
       </section>
 

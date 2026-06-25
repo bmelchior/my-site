@@ -35,7 +35,7 @@ export default function PageHeader({
         </div>
       )}
       <div>
-        <h1 className="text-page-h1 text-primary">{title}</h1>
+        <h1 className="text-hero text-primary">{title}</h1>
         {subtitle && (
           <p className="mt-5 text-body-lg text-secondary">{subtitle}</p>
         )}

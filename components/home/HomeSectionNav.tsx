@@ -6,8 +6,8 @@ import { useMobileMenu } from "@/components/MobileMenuContext";
 import { getScrollOffset, scrollToSection } from "@/lib/scroll";
 
 const sections = [
-  { id: "what-ive-built", label: "Maker" },
   { id: "what-ive-done", label: "Leader" },
+  { id: "what-ive-built", label: "Maker" },
   { id: "personal-projects", label: "Explorer" },
 ] as const;
 
