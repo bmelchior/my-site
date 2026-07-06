@@ -21,7 +21,7 @@ const bioBlocks: { text: string; variant?: "pullquote" }[] = [
     text: "I've spent 20 years leading design at companies like BuzzFeed, The New York Times, DirecTV, Ticketmaster, and Capital One. At three of those companies, I led teams that built products and design systems from the ground up — advocating for the investment, earning stakeholder buy-in, and working in tight collaboration with product and engineering from beginning to end. Across every role, I've raised the value and visibility of design and user research in organizations where design was historically undervalued — earning it a seat at the strategy table, not just a spot in the production line.",
   },
   {
-    text: "As a designer, AI has been empowering. For the first time, I can envision something and bring it to life in minutes, not weeks. And I can help others do the same.",
+    text: "As a design leader, AI has been empowering. For the first time, I can envision something and bring it to life in minutes, not weeks. And I can help others do the same.",
     variant: "pullquote",
   },
   {

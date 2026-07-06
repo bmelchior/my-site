@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import TagPill from "@/components/TagPill";
 import TextLink from "@/components/TextLink";
 import TransitionWrapper from "@/components/TransitionWrapper";
+import LeadershipCaseStudyTemplate from "@/components/work/leadership/LeadershipCaseStudyTemplate";
 import ProjectCarousel from "@/components/work/ProjectCarousel";
 import ProjectDetailLinks from "@/components/work/ProjectDetailLinks";
 import { createPageMetadata } from "@/lib/metadata";
@@ -54,6 +55,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   const { prev, next } = getAdjacentProjects(slug);
   const { sections } = project;
+
+  if (project.template === "leadership-timeline" && project.leadershipTimeline) {
+    return (
+      <LeadershipCaseStudyTemplate
+        project={project}
+        timeline={project.leadershipTimeline}
+        prev={prev}
+        next={next}
+      />
+    );
+  }
 
   return (
     <>

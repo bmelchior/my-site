@@ -17,7 +17,11 @@ export function getScrollOffset() {
   return headerHeight + navHeight;
 }
 
-export function scrollToSection(id: string, duration = 300) {
+export function scrollToSection(
+  id: string,
+  duration = 300,
+  onComplete?: () => void,
+) {
   const element = document.getElementById(id);
   if (!element) return;
 
@@ -34,6 +38,8 @@ export function scrollToSection(id: string, duration = 300) {
 
     if (progress < 1) {
       requestAnimationFrame(step);
+    } else {
+      onComplete?.();
     }
   }
 

@@ -2,6 +2,7 @@ type SectionHeaderProps = {
   title: string;
   description?: string;
   eyebrow?: string;
+  metaLabels?: string[];
   className?: string;
 };
 
@@ -9,6 +10,7 @@ export default function SectionHeader({
   title,
   description,
   eyebrow,
+  metaLabels,
   className = "",
 }: SectionHeaderProps) {
   return (
@@ -21,6 +23,11 @@ export default function SectionHeader({
       </h2>
       {description && (
         <p className="section-intro__body text-body-lg">{description}</p>
+      )}
+      {metaLabels && metaLabels.length > 0 && (
+        <p className="section-intro__meta-labels text-meta text-muted">
+          {metaLabels.join(" • ")}
+        </p>
       )}
     </div>
   );

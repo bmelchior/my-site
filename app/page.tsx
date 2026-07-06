@@ -6,7 +6,11 @@ import TransitionWrapper from "@/components/TransitionWrapper";
 import FeaturedWorkGrid from "@/components/work/FeaturedWorkGrid";
 import WorkProjectCard from "@/components/work/WorkProjectCard";
 import { createPageMetadata } from "@/lib/metadata";
-import { featuredProjects, personalProjects } from "@/lib/data/projects";
+import {
+  featuredProjects,
+  leadershipProjects,
+  personalProjects,
+} from "@/lib/data/projects";
 
 export const metadata = createPageMetadata({
   title: "Home",
@@ -50,9 +54,21 @@ const doneBlocks = [
       "Advocated, got buy-in, and shipped design systems at companies that had none.",
   },
   {
+    images: [
+      { src: "/images/done/DirecTV-Logo-w.png", alt: "DIRECTV" },
+      { src: "/images/done/BuzzFeed-Logo-w.png", alt: "BuzzFeed" },
+      { src: "/images/done/Axs_logo-w.png", alt: "AXS", compact: true },
+    ],
+    leadIn: "zero-to-one-products-and-teams",
+    metric: "Zero-to-one",
+    label: "Brought new products to market and new teams to companies",
+    story:
+      "Starting from a problem to solve and a goal to achieve, I brought new products to market and new teams to companies. DirecTV's streaming product & prototyping team • Animation team at Buzzfeed • User Research at AXS",
+  },
+  {
     image: "/images/done/Capital_One_logo-w.png",
     imageAlt: "Capital One",
-    leadIn: "4.5% increase in funded loans at Capital One —",
+    leadIn: "4.5% increase in funded loans at Capital One through a front-end redesign —",
     story:
       "Led a 10-week redesign that lifted every metric in the conversion funnel.",
   },
@@ -77,13 +93,23 @@ export default function HomePage() {
       </section>
 
       <section
-        id="what-ive-built"
+        id="enhanced-leadership"
         className="home-section content-container pb-16 md:pb-24"
       >
         <TransitionWrapper delay={200}>
+          <SectionHeader title="Enhanced Leadership" />
+          <FeaturedWorkGrid projects={leadershipProjects} variant="home" />
+        </TransitionWrapper>
+      </section>
+
+      <section
+        id="what-ive-built"
+        className="home-section content-container pb-16 md:pb-24"
+      >
+        <TransitionWrapper delay={300}>
           <SectionHeader
             title="What I've Built"
-            description="Great products don't start with ideas. They start with a clear-eyed read of a problem or an opportunity."
+            description="In my spare time, I've identified pain points and market opportunities, founding two companies."
           />
           <FeaturedWorkGrid projects={featuredProjects} variant="home" />
         </TransitionWrapper>
@@ -93,10 +119,10 @@ export default function HomePage() {
         id="personal-projects"
         className="home-section content-container pb-16 md:pb-24"
       >
-        <TransitionWrapper delay={300}>
+        <TransitionWrapper delay={400}>
           <SectionHeader
             title="Personal Projects"
-            description="Experiments and side builds — quick personal projects to organize or stay entertained."
+            description="Expanding my AI understanding and skills by putting them into practice — building consumer apps and personal agents."
           />
           <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
             {personalProjects.map((project, index) => (

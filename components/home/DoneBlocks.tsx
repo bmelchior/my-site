@@ -11,6 +11,8 @@ export type DoneBlock = {
   smallLogo?: boolean;
   images?: DoneBlockLogo[];
   leadIn: string;
+  metric?: string;
+  label?: string;
   story: string;
 };
 
@@ -39,14 +41,16 @@ export default function DoneBlocks({ blocks }: DoneBlocksProps) {
   return (
     <div className="relative -mx-[var(--page-margin)] border-y border-border bg-surface px-[var(--page-margin)] py-10 md:py-14">
       <div className="content-container">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {blocks.map((block) => {
-            const { metric, label } = extractMetric(block.leadIn);
+            const parsed = extractMetric(block.leadIn);
+            const metric = block.metric ?? parsed.metric;
+            const label = block.label ?? parsed.label;
 
             return (
               <article
                 key={block.leadIn}
-                className="flex flex-col gap-4 rounded-[var(--radius-md)] border border-border bg-surface-2 p-6"
+                className="flex h-full flex-col gap-4 rounded-[var(--radius-md)] border border-border bg-surface-2 p-6"
               >
                 {block.images?.length ? (
                   <div className="flex flex-nowrap items-center gap-4">
@@ -79,7 +83,7 @@ export default function DoneBlocks({ blocks }: DoneBlocksProps) {
                     }
                   />
                 )}
-                <div>
+                <div className="flex flex-1 flex-col">
                   <p className="font-mono text-2xl font-medium leading-none tracking-tight text-accent md:text-3xl">
                     {metric}
                   </p>

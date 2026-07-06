@@ -19,5 +19,3 @@ Everything built toward the real destination. Building custom Chat Agents. I wal
 Then I demoed Workspace Agents. OpenAI released them on April 22nd. I learned the feature and built my demo in about three weeks. That timeline was part of the message. You don't need to wait until you've mastered something to share it. You need to be three weeks ahead of the people you're teaching. That's it. Learn it, try it, show what you found. The speed at which I picked it up and presented it showed the room that this stuff is accessible if you're willing to just start.
 
 The reaction surprised me. Not the enthusiasm from the people I expected to be engaged. The questions from the people I expected to sit quietly. When you build a session that respects where people are starting from and takes them somewhere concrete, even the skeptics lean in.
-
-Three weeks from learning to teaching. That's the cycle. That's how it works.

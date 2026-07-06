@@ -1,6 +1,6 @@
 type PlaceholderImageProps = {
   alt: string;
-  aspectRatio?: "4/3" | "16/9" | "square";
+  aspectRatio?: "4/3" | "16/9" | "16/7" | "square";
   className?: string;
   workInProgress?: boolean;
 };
@@ -16,7 +16,9 @@ export default function PlaceholderImage({
       ? "aspect-square"
       : aspectRatio === "16/9"
         ? "aspect-video"
-        : "aspect-[4/3]";
+        : aspectRatio === "16/7"
+          ? "aspect-[16/7]"
+          : "aspect-[4/3]";
 
   return (
     <div

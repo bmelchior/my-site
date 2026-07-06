@@ -1,3 +1,8 @@
+import type { LeadershipTimeline, ProjectTemplate } from "@/lib/data/leadership-timeline";
+import { chatWorkflowAgentsTimeline } from "@/lib/data/leadership-timelines/chat-workflow-agents";
+import { leadershipAccountabilityTimeline } from "@/lib/data/leadership-timelines/leadership-accountability";
+import { upskillingCompanyAiTimeline } from "@/lib/data/leadership-timelines/upskilling-company-ai";
+
 export type ProjectSections = {
   problem: string | string[];
   hypothesis?: string | string[];
@@ -29,6 +34,7 @@ export type Project = {
   cardDescription?: string;
   tags: string[];
   featured?: boolean;
+  leadership?: boolean;
   personal?: boolean;
   appStoreAvailable?: boolean;
   imageAlt: string;
@@ -41,6 +47,8 @@ export type Project = {
   links?: ProjectLink[];
   images: ProjectImage[];
   sections: ProjectSections;
+  template?: ProjectTemplate;
+  leadershipTimeline?: LeadershipTimeline;
 };
 
 function projectImages(title: string): ProjectImage[] {
@@ -57,7 +65,7 @@ export const projects: Project[] = [
     cardDescription:
       "Turn family photos into personalized illustrated bedtime stories with AI.",
     tags: ["AI", "Mobile", "Expo", "Supabase", "Claude", "fal.ai", "Cursor"],
-    featured: true,
+    personal: true,
     appStoreAvailable: true,
     imageAlt: "Teller Family project preview",
     cardImage: "/work/teller-family/hero-card.png",
@@ -137,7 +145,7 @@ export const projects: Project[] = [
     cardDescription:
       "Your AI movie expert — find what to watch and where, without all the clutter.",
     tags: ["AI", "Next.js", "Mobile", "TMDB", "Claude", "Cursor"],
-    featured: true,
+    personal: true,
     appStoreAvailable: true,
     imageAlt: "The Usher project preview",
     cardImage: "/work/the-usher/hero-card.png",
@@ -202,7 +210,7 @@ export const projects: Project[] = [
     cardDescription:
       "AI-powered storytelling that turns your photos into personalized stories.",
     tags: ["AI", "Mobile", "Next.js", "Expo", "Supabase", "Claude", "Cursor"],
-    featured: true,
+    personal: true,
     appStoreAvailable: true,
     imageAlt: "Teller Stories project preview",
     cardImage: "/work/teller-stories/hero-card.jpg",
@@ -307,14 +315,16 @@ export const projects: Project[] = [
   },
   {
     slug: "chat-workflow-agents",
-    title: "Chat & Workflow Agents",
+    title: "Increasing quality and productivity",
     description:
-      "Leveraging OpenAI's GPT's and Workspace Agents, I save my team hours while improving quality of work.",
+      "Leveraging OpenAI's GPT's, I reimagined how a team consumes information and follows guidelines, saving hours, reducing time spent in meetings, and improving quality.",
     cardDescription:
-      "Leveraging OpenAI's GPT's and Workspace Agents, I save my team hours while improving quality of work.",
+      "Leveraging OpenAI's GPT's, I reimagined how a team consumes information and follows guidelines, saving hours, reducing time spent in meetings, and improving quality.",
     tags: ["AI", "Custom GPTs", "Workflow Automation", "ChatGPT"],
-    featured: true,
-    imageAlt: "Chat & Workflow Agents project preview",
+    leadership: true,
+    template: "leadership-timeline",
+    leadershipTimeline: chatWorkflowAgentsTimeline,
+    imageAlt: "Increasing quality and productivity project preview",
     cardImage: "/work/chat-workflow-agents/hero-card.jpg",
     images: [
       {
@@ -357,12 +367,58 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "leadership-accountability",
+    title: "Improving retros & accountability",
+    description:
+      "Reimagining team retros to help managers understand what's most important—and built an agent to improve follow up",
+    cardDescription:
+      "Reimagining team retros to help managers understand what's most important—and built an agent to improve follow up",
+    tags: ["Leadership", "Team Health", "Agents"],
+    leadership: true,
+    template: "leadership-timeline",
+    leadershipTimeline: leadershipAccountabilityTimeline,
+    imageAlt: "Retro prioritization matrix with axes for urgency and work vs well-being impact",
+    cardImage: "/work/leadership-accountability/card.png",
+    images: projectImages("Improving retros & accountability"),
+    sections: {
+      timeline: "Placeholder",
+      problem: "Placeholder",
+      solution: "Placeholder",
+      howAiIsUsed: "Placeholder",
+      techStack: { intro: "Placeholder", items: [] },
+      whatILearned: "Placeholder",
+    },
+  },
+  {
+    slug: "upskilling-company-ai",
+    title: "Upskilling a company on AI",
+    description:
+      "As the non-engineering expert on AI at AXS, I led two company-wide workshops, called \"Intro to AI for Non-Technical Team Members.\" It reached hundreds of employees and led to new applications of AI across teams.",
+    cardDescription:
+      "As the non-engineering expert on AI at AXS, I led two company-wide workshops, called \"Intro to AI for Non-Technical Team Members.\" It reached hundreds of employees and led to new applications of AI across teams.",
+    tags: ["AI", "Education", "Leadership"],
+    leadership: true,
+    template: "leadership-timeline",
+    leadershipTimeline: upskillingCompanyAiTimeline,
+    imageAlt: "Slack messages from employees praising the AI training workshops",
+    cardImage: "/work/upskilling-company-ai/card.png",
+    images: projectImages("Upskilling a company on AI"),
+    sections: {
+      timeline: "Placeholder",
+      problem: "Placeholder",
+      solution: "Placeholder",
+      howAiIsUsed: "Placeholder",
+      techStack: { intro: "Placeholder", items: [] },
+      whatILearned: "Placeholder",
+    },
+  },
+  {
     slug: "ai-simply",
     title: "AI Simply",
     description:
-      "After leading Intro to AI for Non-Technical Teams workshops, I made these easy-to-understand guides to help more people use AI better.",
+      "After leading Intro to AI for Non-Technical Teams workshops, I developed a service to help more people develop a practical understanding of AI.",
     cardDescription:
-      "After leading Intro to AI for Non-Technical Teams workshops, I made these easy-to-understand guides to help more people use AI better.",
+      "After leading Intro to AI for Non-Technical Teams workshops, I developed a service to help more people develop a practical understanding of AI.",
     tags: ["AI", "Education"],
     featured: true,
     imageAlt: "AI Simply light bulb illustration with neural network pattern",
@@ -518,8 +574,7 @@ export const projects: Project[] = [
 
 const featuredPriority: Partial<Record<string, number>> = {
   "dyslexia-edtech": 0,
-  "chat-workflow-agents": 1,
-  "ai-simply": 2,
+  "ai-simply": 1,
 };
 
 export const featuredProjects = projects
@@ -531,10 +586,15 @@ export const featuredProjects = projects
       featuredPriority[b.slug] ?? 100 + projects.indexOf(b);
     return aPriority - bPriority;
   });
+export const leadershipProjects = projects.filter((p) => p.leadership);
 export const personalProjects = projects.filter((p) => p.personal);
 
-/** Featured + personal — matches homepage sections and prev/next nav order */
-export const workNavProjects = [...featuredProjects, ...personalProjects];
+/** Leadership + featured + personal — matches homepage sections and prev/next nav order */
+export const workNavProjects = [
+  ...leadershipProjects,
+  ...featuredProjects,
+  ...personalProjects,
+];
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);

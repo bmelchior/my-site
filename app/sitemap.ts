@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/perspectives",
     "/speaking",
     "/contact",
+    "/photography",
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
