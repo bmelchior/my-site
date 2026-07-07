@@ -43,6 +43,17 @@ function renderDetail(detail?: string | string[]) {
   ));
 }
 
+function renderSummary(summary?: string | string[]) {
+  if (!summary) return null;
+
+  const paragraphs = Array.isArray(summary) ? summary : [summary];
+  return paragraphs.map((paragraph) => (
+    <p key={paragraph.slice(0, 40)} className="timeline-step__summary">
+      {paragraph}
+    </p>
+  ));
+}
+
 function renderInsightText(text: string) {
   const boldMatch = text.match(/^\*\*(.+?)\*\*\s*([\s\S]*)$/);
 
@@ -124,7 +135,7 @@ export default function TimelineStep({
           metrics.length > 0 && <MetricsRow metrics={metrics} />
         )}
 
-        {summary && <p className="timeline-step__summary">{summary}</p>}
+        {renderSummary(summary)}
 
         {carouselImages && carouselImages.length > 0 && (
           <div className="timeline-step__carousel-ribbon">

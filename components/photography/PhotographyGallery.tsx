@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import CategoryDropdown from "@/components/photography/CategoryDropdown";
 import PhotoThumbnailGrid from "@/components/photography/PhotoThumbnailGrid";
 import PhotographyCarousel from "@/components/photography/PhotographyCarousel";
 import {
+  DEFAULT_PHOTOGRAPHY_CATEGORY_SLUG,
   PHOTOGRAPHY_CATEGORIES,
   getCategoryBySlug,
   isValidCategorySlug,
@@ -15,7 +16,7 @@ function getInitialSlug(categoryParam: string | null): string {
   if (categoryParam && isValidCategorySlug(categoryParam)) {
     return categoryParam;
   }
-  return PHOTOGRAPHY_CATEGORIES[0].slug;
+  return DEFAULT_PHOTOGRAPHY_CATEGORY_SLUG;
 }
 
 export default function PhotographyGallery() {
@@ -29,9 +30,19 @@ export default function PhotographyGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const activeCategory = useMemo(
-    () => getCategoryBySlug(activeSlug) ?? PHOTOGRAPHY_CATEGORIES[0],
+    () =>
+      getCategoryBySlug(activeSlug) ??
+      getCategoryBySlug(DEFAULT_PHOTOGRAPHY_CATEGORY_SLUG)!,
     [activeSlug],
   );
+
+  useEffect(() => {
+    if (categoryParam && isValidCategorySlug(categoryParam)) return;
+    router.replace(
+      `/photography?category=${DEFAULT_PHOTOGRAPHY_CATEGORY_SLUG}`,
+      { scroll: false },
+    );
+  }, [categoryParam, router]);
 
   const handleCategorySelect = useCallback(
     (slug: string) => {

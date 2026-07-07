@@ -126,11 +126,13 @@ export const chatWorkflowAgentsTimeline: LeadershipTimeline = {
       },
       metrics: [
         { value: "9", label: "purpose-built agents built by my team" },
-        { value: "$65k+", label: "Minimum annual retainer saved on UX copywriter" },
+        { value: "$300k+", label: "Minimum annual retainer saved on UX copywriter" },
         { value: "100%", label: "Design team adoption" },
       ],
-      summary:
+      summary: [
         "The agent library was adopted by the full design team within weeks — not because of mandates, but because it made people's jobs easier.",
+        "Copywriting and translation agents saved time and money.",
+      ],
       detail: [
         "Adoption jumped when people stopped thinking of AI as a generic tool and started seeing it as something built for them. And the most effective agents weren't the most sophisticated ones. Inspired by these agents, other teams in the company have built their own custom agents.",
         "To measure adoption and effectiveness, I surveyed the team every 2 weeks, asking them which tools and GPT's they're using, how much time they estimate they're saving, and how AI is helping them.",

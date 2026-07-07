@@ -114,7 +114,7 @@ export const projects: Project[] = [
       hypothesis:
         "Personalized content is the next evolution in media. Media has gone from edited and linear, to recorded and saved, to recommended and shared. Personalization algorithms will give way to personalized content — content that features the viewer and their world. I'm not sure how much space it will take up, and professionally-created content will always dominate, just as linear still has its place today, but personalized content will continue to grow.",
       solution: [
-        "Teller Family lets parents upload family photos and generates fully illustrated, personalized bedtime stories. Each story features the child's real world reimagined through AI-generated illustrations matched to the narrative. In addition to uploading photos, parents can choose a reading level and a genre for the story. The genre effects the style of the illustrations.",
+        "Teller Family lets parents upload family photos and generates fully illustrated, personalized bedtime stories. Each story features the child's real world reimagined through AI-generated illustrations matched to the narrative. In addition to uploading photos, parents can choose a reading level and a genre for the story. The genre affects the style of the illustrations.",
       ],
       howAiIsUsed:
         "A two-stage AI pipeline powers the experience. First, parents upload family photos that are sent to fal.ai to generate stylized illustrations — transforming real photos into story-ready artwork. Those illustrations are then analyzed by Claude to craft an age-appropriate narrative that weaves the illustrated scenes into a cohesive bedtime story. Once illustrations are generated, the original photos are deleted — they're never stored, in an effort to protect family privacy.",
@@ -317,9 +317,9 @@ export const projects: Project[] = [
     slug: "chat-workflow-agents",
     title: "Increasing quality and productivity",
     description:
-      "Leveraging OpenAI's GPT's, I reimagined how a team consumes information and follows guidelines, saving hours, reducing time spent in meetings, and improving quality.",
+      "Leveraging OpenAI's GPT's, I reimagined how a team consumes information and follows guidelines, saving hours, improving quality, and reducing time spent in meetings and money spent on vendors.",
     cardDescription:
-      "Leveraging OpenAI's GPT's, I reimagined how a team consumes information and follows guidelines, saving hours, reducing time spent in meetings, and improving quality.",
+      "Leveraging OpenAI's GPT's, I reimagined how a team consumes information and follows guidelines, saving hours, improving quality, and reducing time spent in meetings and money spent on vendors.",
     tags: ["AI", "Custom GPTs", "Workflow Automation", "ChatGPT"],
     leadership: true,
     template: "leadership-timeline",
@@ -370,9 +370,9 @@ export const projects: Project[] = [
     slug: "leadership-accountability",
     title: "Improving retros & accountability",
     description:
-      "Reimagining team retros to help managers understand what's most important—and built an agent to improve follow up",
+      "Reimagining team retros to help managers understand what's most important—and built an agent to improve follow-up",
     cardDescription:
-      "Reimagining team retros to help managers understand what's most important—and built an agent to improve follow up",
+      "Reimagining team retros to help managers understand what's most important—and built an agent to improve follow-up",
     tags: ["Leadership", "Team Health", "Agents"],
     leadership: true,
     template: "leadership-timeline",

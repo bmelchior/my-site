@@ -63,7 +63,7 @@ const doneBlocks = [
     metric: "Zero-to-one",
     label: "Brought new products to market and new teams to companies",
     story:
-      "Starting from a problem to solve and a goal to achieve, I brought new products to market and new teams to companies. DirecTV's streaming product & prototyping team • Animation team at Buzzfeed • User Research at AXS",
+      "Given a problem to solve and a goal to achieve. DirecTV Stream & motion design • Animation team at BuzzFeed • User Research at AXS",
   },
   {
     image: "/images/done/Capital_One_logo-w.png",
@@ -97,7 +97,10 @@ export default function HomePage() {
         className="home-section content-container pb-16 md:pb-24"
       >
         <TransitionWrapper delay={200}>
-          <SectionHeader title="Enhanced Leadership" />
+          <SectionHeader
+            title="Enhanced Leadership"
+            description="Improving workflows by focusing on teams' needs and company goals."
+          />
           <FeaturedWorkGrid projects={leadershipProjects} variant="home" />
         </TransitionWrapper>
       </section>

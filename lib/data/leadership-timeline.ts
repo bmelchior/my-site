@@ -43,7 +43,7 @@ export type LeadershipTimelineStep = {
     objectFit?: "cover" | "contain";
   };
   placeholderAlt?: string;
-  summary?: string;
+  summary?: string | string[];
   closingSummary?: string;
   detail?: string | string[];
   flowVisualizer?: FlowVisualizerData;

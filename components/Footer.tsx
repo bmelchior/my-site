@@ -10,7 +10,7 @@ export default function Footer() {
           </p>
 
           <Button
-            href="/photography"
+            href="/photography?category=street-life-culture"
             variant="primary"
             className="justify-self-center"
           >

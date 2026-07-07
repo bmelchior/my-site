@@ -6,7 +6,7 @@ const timelineEntries = [
   },
   {
     year: "2022–Present: Leading design at Dish and AXS",
-    description: "VP of Product Design, leading designers and researchers across consumer and enterprise experiences, and evelevating the role they plan in an organization.",
+    description: "VP of Product Design, leading designers and researchers across consumer and enterprise experiences, and elevating the role they play in an organization.",
   },
   {
     year: "2020–2022: Raised the bar at Capital One and NETGEAR",
